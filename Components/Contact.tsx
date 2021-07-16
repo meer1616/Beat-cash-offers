@@ -1,7 +1,6 @@
 import styles from "./Home.module.css";
 import Image from "next/image";
 import cn from "classnames";
-import { FaMapMarkerAlt, FaAt, FaPhoneVolume } from 'react-icons/fa';
 export default function Contact() {
     return (
         <div id="contactus" className={styles.tenPageMain}>
@@ -10,15 +9,10 @@ export default function Contact() {
                 <div className={styles.contactImg}>
                     <Image height={700} width={700} src="/contactImg.svg" alt="" />
                 </div>
-
-
                 <div className={styles.contactForm}>
                     <div className={cn(styles.contactInfoCont, styles.ContactUsform)}>
                         <h1 className={styles.contactHeading}>Get in Touch with Us</h1>
-
                         <form method="POST">
-
-                            {/* <div className={styles.contactInputField}> */}
                             <div>
                                 <label className={styles.labelOfForm} htmlFor="">
                                     First Name
@@ -39,8 +33,6 @@ export default function Contact() {
                                     name="lastname"
                                 />
                             </div>
-                            {/* </div> */}
-                            {/* <div className={styles.contactInputField}> */}
                             <div>
                                 <label className={styles.labelOfForm} htmlFor="">
                                     Phone Number
@@ -61,8 +53,6 @@ export default function Contact() {
                                     name="email"
                                 />
                             </div>
-                            {/* </div> */}
-
                             <div className={styles.contactUsSubmitDiv}>
                                 <button type='submit' className={styles.ContactUsSubmitBtn}>Submit </button>
                             </div>

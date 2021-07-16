@@ -2,17 +2,16 @@ import styles from "./Home.module.css";
 import Image from "next/image";
 import cn from "classnames";
 import React, { useState, useRef } from "react";
+import InputRange from 'react-input-range';
+import { Slider } from "@material-ui/core"
 
 export default function FormFill() {
 
     const rangeInp = useRef(null);
-    console.log(rangeInp.current);
+    // console.log(rangeInp.current);
     const [range, setRange] = useState("50")
+    // console.log("range value is", range);
 
-    const handleRangeValue = () => {
-        setRange(range)
-
-    }
 
 
     return (
@@ -33,7 +32,6 @@ export default function FormFill() {
                             <div className={styles.forPad}>
                                 <div className={styles.fstlstName}>
                                     <div className={cn(styles.fname, styles.gapbtwnElem)}>
-                                        {/* className={cn(styles.card2, styles.cmnCard)} */}
                                         <label className={styles.labelOfForm} htmlFor="">
                                             First Name
                                         </label>
@@ -54,9 +52,7 @@ export default function FormFill() {
                                         />
                                     </div>
                                 </div>
-                                {/*  */}
                                 <div className={styles.fstlstName}>
-                                    {/* className={cn(styles.card2, styles.cmnCard)} */}
                                     <div className={cn(styles.fname, styles.gapbtwnElem)}>
                                         <label className={styles.labelOfForm} htmlFor="">
                                             Phone Number
@@ -124,7 +120,6 @@ export default function FormFill() {
                                 </div>
 
                                 <div className={styles.que}>
-                                    {/* <div className={styles.que1}></div> */}
                                     <div className={styles.queDiv}>
                                         <label
                                             className={cn(styles.labelOfForm, styles.q1label)}
@@ -166,9 +161,34 @@ export default function FormFill() {
                                         <div className={styles.expectToSpend}>
                                             <label htmlFor="">How much do you expect to spend ?</label>
                                             <div className="slidecontainer">
-                                                <input onInput={handleRangeValue} ref={rangeInp} type="range" min="1" max="100" value={range} className="slider" id="myRange" />
-                                                <p>Value: <span id="demo"></span></p>
+                                                <input style={{ width: "100%", marginTop: "15px" }} onChange={(e) => { setRange(e.target.value) }} ref={rangeInp} type="range" min="250" max="1000000" value={range} className={styles.slider} id="myRange" />
+                                                <div style={{ display: "flex", justifyContent: "space-between", }}><span>250k</span> <span>1000000k</span></div>
+                                                <p style={{ margin: "15px 0", color: "#091638" }}>Value:{range}k<span id="demo"></span></p>
                                             </div>
+                                            {/* <InputRange
+                                                maxValue={20}
+                                                minValue={0}
+                                                value={range}
+                                                onChange={(e) => { setRange(e.target.value) }} /> */}
+                                            {/* <Slider
+                                                onChange={(e) => { e.target.value }}
+                                                defaultValue={0}
+                                                value={range}
+                                                aria-labelledby="discrete-slider-always"
+                                                valueLabelDisplay="on"
+                                            /> */}
+                                            {/* <Slider
+                                                defaultValue={250}
+                                                // getAriaValueText={valuetext}
+                                                aria-labelledby="discrete-slider-small-steps"
+                                                // step={0.00000001}
+                                                // marks
+                                                valueLabelFormat={range}
+                                                onChange={(e) => { setRange(e.target.value) }}
+                                                min={250}
+                                                max={1000000}
+                                                valueLabelDisplay="auto"
+                                            /> */}
                                         </div>
                                         <div className={styles.ZipDiv}>
                                             <label className={styles.labelOfForm} htmlFor="">
@@ -180,32 +200,6 @@ export default function FormFill() {
                                             />
                                         </div>
                                     </div>
-
-
-                                    {/*  */}
-                                    {/* <div className={styles.queDiv}>
-                                        <label
-                                            className={cn(styles.labelOfForm, styles.q3label)}
-                                            htmlFor=""
-                                        >
-                                            Are you currently working with agent ?
-
-                                        </label>
-                                        <div className={styles.formFillRadioBtnDiv}>
-                                            <div>
-
-                                                <input type="radio" id="yes" name="q3" value="Yes" />
-                                                <label className={styles.q1radioBtn} htmlFor="">
-                                                    Yes
-                                                </label>
-                                            </div>
-                                            <div>
-                                                <input type="radio" id="no" name="q3" value="No" />
-                                                <label htmlFor="">No</label>
-
-                                            </div>
-                                        </div>
-                                    </div> */}
                                 </div>
 
                             </div>
@@ -218,9 +212,6 @@ export default function FormFill() {
                     </div>
                 </div>
             </div>
-            {/* <div className={styles.formSideLeftDesign}>
-                <Image height={250} width={200} src="/leftDesign.png" alt="" />
-            </div> */}
         </div>
     )
 }

@@ -1,7 +1,5 @@
 import styles from "./Home.module.css";
 import Image from "next/image";
-import cn from "classnames";
-import { FaMapMarkerAlt, FaAt, FaPhoneVolume } from 'react-icons/fa';
 import { FaArrowRight } from 'react-icons/fa'
 
 export default function Homei() {

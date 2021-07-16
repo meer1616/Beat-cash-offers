@@ -1,6 +1,4 @@
 import styles from "./Home.module.css";
-import Image from "next/image";
-import cn from "classnames";
 
 export default function NewsLetter() {
     return (

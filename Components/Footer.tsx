@@ -1,13 +1,10 @@
 import styles from "./Home.module.css";
-import Image from "next/image";
 import React from "react";
-import Link from "next/dist/client/link";
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa"
 
 export default function Footer() {
     return (
         <footer className={styles.footer}>
-            {/* <Image height={550} width={1850} src="/Union.png" alt="" /> */}
             <div className={styles.footerHead}>
                 <div className={styles.logoLinks}>
                     <div className={styles.beatCashHeading}>

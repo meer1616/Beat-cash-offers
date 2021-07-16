@@ -31,9 +31,6 @@ export default function LatestPosts() {
                     </div>
                 </div>
             </div>
-            {/* <div className={styles.faqSideLeftDesign}>
-                <Image height={250} width={200} src="/leftDesign.png" alt="" />
-            </div> */}
         </div>
     )
 }
