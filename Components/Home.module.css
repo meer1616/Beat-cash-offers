@@ -1,0 +1,661 @@
+.homeContainer,.secPage,.cardImg,.fifthPageContHeading,.sevenPageCont1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.welcomeHomeLogo{
+    position: relative;
+}
+.homeContainer{
+    margin-top: 50px;
+}
+.welcomHomeCont{
+    width: 50%;
+    padding: 0 88px;
+}
+.wlcmtxt{
+    font-size: 1.3rem;
+}
+.wlcmTitle{
+    font-size: 40px;
+}
+.wlcmExtratxt{
+    margin: 20px 0;
+    font-size: 19px;
+    letter-spacing: 0.2px;
+    padding-right: 70px;
+}
+.applyBtnHome{
+    padding: 7px 25px;
+border: 1px solid black;
+border-radius:30px;
+font-size: 1.1rem;
+background-color: white;
+color:#091638;
+box-shadow: 0px 0px 8px rgb(43, 43, 43);
+margin-top: 20px;
+}
+.applyBtnHome:hover{
+    background-color:#091638 ;
+    color: white;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.homeSideRightDesign{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+.span{
+    padding: 10px 0;
+    margin: 0px 40px;
+    color: green;
+}
+/* **************************** 2nd page ************* */
+.secPage{
+width: 86%;
+margin: auto;
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-direction: row-reverse;
+}
+.cancelCont,.cancelContCard{
+    width: 50%;
+}
+.cancelCont {
+    font-size: 1.2rem;
+    padding: 0 70px;
+}
+/* ******************* third page *******************  */
+.thirdPageMain{
+    margin: 50px 0;
+    margin: 200px 0;
+}
+.thirdPage{
+    display:flex ;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 86%;
+    margin: auto;
+}
+.thirdPageMain p,.thirdPageMain h1 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.firstCard,.secCard,.thirdCard{
+    padding: 40px;
+    width: 25%;
+    border-radius: 25px;
+    box-shadow: 0 2px 7px rgb(211, 211, 211) ;
+    transition: all 0.5s ease ;
+}
+.firstCard:hover,.secCard:hover,.thirdCard:hover{
+  transform: scale(1.05);
+  background-color: rgb(245, 245, 245);
+    cursor: pointer;
+}
+.CardImg{
+    display:flex ;
+    justify-content: center;
+    align-items: center;
+}
+/* ********************* forth page */
+.forthPageMain{
+    margin-top: 100px;
+}
+.fstlstName{
+    display: flex;
+}
+.fname{
+    width: 50%;
+}
+.formCont{
+    margin-top: 150px;
+}
+
+.formHeading{
+    background-color: #091638;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 20px;
+    border-top-right-radius:  25px;
+    border-top-left-radius:  25px;
+}
+.forthPage{
+    top: 100px;
+    margin: auto;
+display: flex;
+justify-content: center;
+}
+.formCont{
+    width: 40%;
+    margin: auto;
+    padding: 0 45px;
+}
+.fillformDetail{
+    padding: 0 15px;
+}
+.fstlstName{
+    display: flex;
+    padding: 10px 5px;
+}
+.labelOfForm{
+    padding: 7px 0;
+    display: block;
+}
+.inputOfForm{
+    outline: none;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid black;
+}
+.forPad{
+    padding: 15px 10px;
+}
+.concern{
+    width: 100%;
+}
+.gapbtwnElem{
+    margin: 0 10px;
+}
+.ConcernDiv{
+    padding: 5px 15px;
+}
+.q1radioBtn{
+    margin-right: 60px;
+}
+.queDiv{
+    width: 90%;
+    margin: auto;
+}
+.formFillRadioBtnDiv{
+    margin-top: 10px ;
+    margin-bottom: 20px;
+}
+
+.q2radioBtn{
+    margin-right: 10px;
+}
+.formArrow{
+    margin-left: 45%;
+    margin-top: -5%;
+}
+
+.submitBtn{
+    font-size: 20px;
+    background-color: #091638;
+    color: white;
+    width: 100%;
+    text-align: center;
+    border: 1px solid #091638;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    padding: 20px 0;
+}
+.submitBtn:hover{
+    background-color: #24304d;
+    cursor: pointer;
+}
+.form{
+    background-color: white;
+    margin: auto;
+    border: 1px solid black;
+    border-radius: 25px;
+    box-shadow: 0 2px 15px rgb(165, 165, 165);
+}
+.formDetail{
+    width: 40%;
+    margin: auto;
+}
+.DreamPropHead{
+    margin-left: 55px;
+    width: 80%;
+}
+.formFillRadioBtnDiv{
+    display: flex;
+}
+.slidecontainer {
+    width: 100%;
+  }
+  .slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+  .slider:hover {
+    opacity: 1;
+  }
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #04AA6D;
+    cursor: pointer;
+  }
+  .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #04AA6D;
+    cursor: pointer;
+  }
+/* ********************* 5th page **************** */
+
+/* ************* sixth page */
+
+/****************************** seventh *******************/
+
+.eightPageCont,.ninePage{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+/***************************** 8th page */
+.eightPageMain{
+margin: 200px 0;
+}
+.eightPageHeading{
+    text-align: center;
+}
+.eightPageContCmn{
+    padding: 10px 20px;
+    margin: 45px 20px;
+    border-radius: 20px;
+}
+.eightPageContCmn:hover{
+    box-shadow: 0 2px 5px rgb(47, 47, 47);
+    transform: scale(1.15);
+    cursor: pointer;
+    transition: all 0.7s ease;
+    background: rgba(0,0,0,0.5) url("../public/homeBuying.jpg") ;
+    color: white;
+    background-size: cover;
+    background-blend-mode: darken;
+    z-index: 10;
+}
+.eightPage{
+    width: 80%;
+    margin: auto;
+}
+.plusMinus{
+    cursor: pointer;
+}
+.eightPageContCmn p,.eightPageContCmn h3,.eightPageContCmn h4{
+    margin: 15px 0;
+}
+/* *************** 9th page  **************** */
+.ninePageCont{
+    max-width: 31%;
+}
+.faqSideLeftDesign{
+    position: relative;
+    top: -80px;
+    z-index: 1;   
+}
+.ninePageMain{
+    margin: 200px 0;
+}
+.ninePage{
+    flex-direction: row-reverse;
+}
+.faqCont{
+    justify-content: space-between;
+    font-weight: 500;
+    border: 1px solid lightgray;
+    padding: 10px 12px;
+    border-radius: 10px;
+    margin: 5px 0px;
+}
+.faqContColor{
+    background-color: #091638;
+    color: white;   
+    padding: 10px 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 10px 12px;
+    margin: 5px 0px;
+    margin-top: -5px;
+    overflow: hidden;
+}
+.faqContDescBlock{
+    display: block;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 10px 12px;
+    margin: 5px 0px;
+    border: 1px solid lightgray;
+    margin-top: -5px;
+    color:rgb(80, 80, 80);
+    overflow: hidden;
+}
+.faqFlexforIcon{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.faqContDescNone{
+    display: none;
+}
+.contactInfoPageNine{
+    margin-top: 40px;
+    font-size: 30px;
+}
+/* ****************** 10 page ************** */
+.tenPageMain{
+    margin-top:  100px;
+}
+.tenPage,.websiteInfo{
+    display: flex;
+    width: 86%;
+    margin: auto;
+}
+.tenPage{
+    justify-content: space-between;
+
+}
+
+.contactImg{
+    width: 50%;
+}
+.contactForm{
+    width: 40%;
+}
+.inputOfForm{
+    width: 70%;
+    margin-bottom: 15px;
+    padding: 5px 5px;
+}
+.contactHeading{
+    margin-bottom: 15px;
+}
+.contactUsSubmitDiv{
+    margin: 25px 0;
+}
+.ContactUsSubmitBtn{
+    background-color: transparent;
+    padding: 15px 50px;
+    border: 1px solid #091638;
+    border-radius: 20px;
+    margin: 25px;
+    font-weight: bold;
+    width: 50%;
+    font-size: 16px;
+    margin-left: 50px;
+}
+.ContactUsSubmitBtn:hover{
+    cursor: pointer;
+    transform: scale(1.03);
+    background-color: #091638;
+    color: white;
+    box-shadow: 0 2px 5px rgb(126, 126, 126);
+    transition: all 0.5s ease;
+}
+/* *************************  11th page  **********************/
+.newsLetterFlexDiv{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid black;
+    border-radius: 50px;
+    width: 50%;
+    margin: auto;
+}
+.elevenPage{
+    text-align: center;
+}
+.subscribeEmail{
+    width: 70%;
+    border-radius: 50px;
+}
+.subscribeBtn{
+    border: 1px solid #091638;
+    padding: 20px 40px;
+    border-radius: 50px;
+}
+.subcribeNowInput{
+    width: 90%;
+    outline: none;
+    border: none;
+    font-size: 17px;
+    margin: auto;
+    padding: 10px 20px;
+}
+.subscribeBtn{
+     background-color: #091638;
+     color: white;
+     letter-spacing: 0.5px;
+    font-size: 16px;
+}
+.subscribeBtn:hover{
+    cursor: pointer;
+    background-color: #2b303d;
+}
+/*  *************  12th page  ******************* */
+.footer{
+    margin-top: 100px;
+    background:  url("../public/Union.png") ;
+    color: white;
+}
+.logoLinks{
+    margin: 0;
+}
+.footerHead{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    padding-top: 15px;
+}
+.footerLinks ul{
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.footerLinks ul li{
+    list-style: none;
+    margin-right:20px     ;
+    margin-top: 30px;
+}
+.beatCashHeading,.footerLinks{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.fotterInfo{
+    text-align: left;
+}
+.footerContact{
+    text-align: right;
+}
+.fotterInfo p{
+margin: 5px 0;
+}
+.socialIcons a,.socialIcons p{
+  text-align:right ;
+  font-size: 15px;
+  margin: 20px 0;
+  margin-left: 10px;
+}
+.socialIcons p a{
+    font-size: 24px;
+    margin-left: 10px;
+}
+@media only screen and (max-width:1038px){
+    .mainNav{
+        flex-direction: column;
+    }
+    .homeContainer{
+        flex-direction: column-reverse;
+    }
+    .secPage{
+        flex-direction: column-reverse;
+    }
+    .welcomHomeCont,.welcomeHomeLogo,.cancelCont,.cancelContCard{
+        width: 100%;
+    }
+    .thirdPage,.forthPage,.ninePage,.eightPageCont,.tenPage,.newsLetterFlexDiv,.footerHead{
+        flex-direction: column;
+    }
+    .firstCard,.secCard,.thirdCard,.formCont,.contactImg,.contactForm{
+        width: 100%;
+    }
+    .formDetail{
+        margin-top: 50px;
+        width: 90%;
+    }
+    .firstCard{
+        margin: 20px 0;
+    }
+    .formArrow{
+        display: none;
+    }
+    .ninePageCont{
+        margin-top: 50px;
+        max-width: 90%;
+    }
+    .newsLetterFlexDiv{
+        border: none;
+        width: 100%;
+    }
+     .subcribeNowInput{
+        border: 1px solid black;
+        border-radius: 50px;
+        width: 100%;
+        margin: auto;
+     }
+     .subscribeBtn{
+         margin-top: 25px;
+         padding: 10px 30px;
+         border-radius: 50px;
+     }
+     .footerHead{
+        align-items: center;
+     }
+     .beatCashHeading,.footerLinks{
+        justify-content: center;
+        }
+        .footerContact{
+            margin-top: 20px;
+        }
+        .footerContact p{
+         text-align: center;
+        }
+        .socialIcons a,.socialIcons p{
+            text-align:center ;
+        }
+        .fotterInfo p{
+            margin: 12px 0;
+        }
+        .welcomHomeCont{
+            padding: 0 30px;
+        }
+        .footer{
+            margin-top: 100px;
+            background: #18316e ;
+            color: white;
+        }
+        .contactImg{
+            margin: 0;
+        }
+}
+
+@media only screen and (max-width:533px){
+.footerLinks ul{
+    flex-direction: column;
+ }
+ .footerLinks ul li{
+    list-style: none;
+    margin-right:0px     ;
+    margin-top: 15px;
+}
+.wlcmTitle{
+    font-size: 25px;
+}
+.wlcmExtratxt{
+    font-size: 16px;
+}
+.greenTxt{
+    display: block;
+}
+.cancelCont {
+    font-size: 1rem;
+    padding: 0 30px;
+}
+.cancelHeading{
+    font-size: 24px;
+}
+.thirdPageMain{
+    margin: 60px 0;
+}
+.thirdPageMain h1{
+    font-size: 24px;
+}
+.thirdPageMain p,.thirdPageMain h1 {
+    margin-bottom: 10px;
+}
+.formCont{
+    padding: 0px;
+}
+.DreamPropHead{
+    margin-left: 0px;
+    padding: 0 30px;
+    width: 100%;
+    font-size: 28px;
+}
+.faqHeading{
+font-size: 25px;
+}
+.ninePageMain{
+    margin: 120px 0;
+}
+.eightPageMain{
+    margin: 80px 0;
+}
+.tenPageMain{
+    margin: 80px 0;
+}
+.inputOfForm{
+    width: 90%;
+    margin-bottom: 15px;
+    padding: 5px 5px;
+}
+.ContactUsSubmitBtn{
+    padding: 10px 50px;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+.contactUsSubmitDiv{
+    width: 50%;
+    margin: 20px auto;
+}
+.contactHeading{
+    font-size: 26px;
+}
+.subcribeNowInput{
+    font-size: 16px;
+}
+.contactHeading{
+    font-size: 24px;
+}
+.formFillRadioBtnDiv{
+    flex-direction: column;
+}
+.secPageMain{
+    margin-top: 20px;
+}
+}

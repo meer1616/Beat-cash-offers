@@ -1,0 +1,117 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    scroll-behavior: smooth;
+}
+a {
+  font-size: 18px;
+  color: inherit;
+  text-decoration: none;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+/* ****************************************************************** */
+.hamburger{
+  display: none;
+  position: absolute;
+  top: 18px;
+  right: 0;
+  margin-right: 0px;
+}
+.navWrapper{
+  margin-top: 10px;
+}
+.mainNav{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 86%;
+  margin: auto;
+}
+.linkContent{
+  width: 100%;
+}
+.linkContent ul{
+  display: flex;
+  list-style: none;
+}
+.linkContent ul li{
+  font-size: 20px;
+  margin: 10px 10px;
+  padding: 10px 10px;
+}
+.linkContent ul li:hover{
+  transform: scale(1.02);
+  color: rgb(85, 85, 85);
+  transition: all 0.3s ease;
+}
+.sigup{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.signuptxt{
+  font-weight: bold;
+  font-size: 1rem;
+  margin-right:25px;
+  cursor: pointer;
+}
+.applyBtn{
+padding: 7px 28px;
+border: 1px solid black;
+border-radius:30px;
+font-size: 1.1rem;
+background-color: #091638;
+color: white;
+box-shadow: 0px 0px 8px black;
+}
+.applyBtn:hover{
+  background-color: white;
+  color:  #091638;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+@media only screen and (max-width:1038px){
+  .hamburger{
+    display: block;
+    transition: all 0.7s ease;
+  }
+  .mainNav{
+      flex-direction: column;
+      border-bottom:  rgb(219, 219, 219);
+    }
+    .sigup{
+        display: none;
+    }
+  .ul{
+      flex-direction: column;
+      transform: translateX(-400%);
+      height: 0px;
+      transition: all 0.7s ease;
+      overflow: hidden;
+  }
+  .linkContent ul li{
+    font-size: 20px;
+    margin: 0px 10px;
+    padding: 10px 10px;
+    text-align: center;
+  }
+  .onClickHamburger{
+      transition: all 0.7s ease ;
+    }
+    .linkContentResp{
+    transform: translateX(0%);
+    height: 220px;
+    transition: all 0.7s ease;
+  }
+  .hamburgerRot{
+    transition: all 0.7s ease;
+  }
+}

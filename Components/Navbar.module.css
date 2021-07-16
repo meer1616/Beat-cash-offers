@@ -1,0 +1,79 @@
+.hamburger{
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 0;
+    margin-right: 25px;
+}
+.navWrapper{
+    margin-top: 10px;
+}
+.mainNav{
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.navbar{
+    
+    /* border: 1px solid black; */
+    padding-left: 40px;
+}
+.linkContent ul{
+    display: flex;
+    list-style: none;
+}
+.linkContent ul li{
+    font-size: 20px;
+    margin: 10px 10px;
+    padding: 10px 10px;
+}
+.linkContent ul li:hover{
+    transform: scale(1.02);
+    color: rgb(85, 85, 85);
+    transition: all 0.3s ease;
+}
+.sigup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signuptxt{
+    font-weight: bold;
+    font-size: 1rem;
+    margin-right:25px;
+    cursor: pointer;
+}
+.applyBtn{
+padding: 7px 15px;
+border: 1px solid black;
+border-radius:30px;
+font-size: 1.1rem;
+background-color: #091638;
+color: white;
+box-shadow: 0px 0px 8px black;
+}
+.applyBtn:hover{
+    background-color: white;
+    color:  #091638;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+@media only screen and (max-width:1038px){
+    .hamburger{
+        display: none;
+        position: absolute;
+        top: 20px;
+        right: 0;
+        margin-right: 5px;
+    }
+    
+   
+
+}
+@media only screen and (max-width:594px){
+
+}
