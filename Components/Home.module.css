@@ -1,3 +1,5 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap');
 .homeContainer,.secPage,.cardImg,.fifthPageContHeading,.sevenPageCont1{
     display: flex;
     justify-content: center;
@@ -7,17 +9,24 @@
     position: relative;
 }
 .homeContainer{
-    margin-top: 50px;
+    /* margin-top: 50px; */
+    width: 85%;
+    margin: auto;
 }
 .welcomHomeCont{
     width: 50%;
-    padding: 0 88px;
+    /* padding: 0 88px; */
+    padding-left:50px;
+}
+.contactImg{
+    margin-right: 50px;
 }
 .wlcmtxt{
     font-size: 1.3rem;
 }
 .wlcmTitle{
-    font-size: 40px;
+    font-size: 35px;
+    /* font-weight: 700; */
 }
 .wlcmExtratxt{
     margin: 20px 0;
@@ -69,8 +78,7 @@ flex-direction: row-reverse;
     padding: 0 70px;
 }
 .thirdPageMain{
-    margin: 50px 0;
-    margin: 200px 0;
+    margin: 70px 0;
 }
 .thirdPage{
     display:flex ;
@@ -87,8 +95,15 @@ flex-direction: row-reverse;
     padding: 40px;
     width: 25%;
     border-radius: 25px;
-    box-shadow: 0 2px 7px rgb(211, 211, 211) ;
+    box-shadow: 0 5px 20px rgb(218, 218, 218) ;
     transition: all 0.5s ease ;
+}
+.cardinfoDiv{
+    margin-top: 15px;
+    /* height: 100%; */
+}
+.howitworkHeading{
+    font-size: 36px;
 }
 .firstCard:hover,.secCard:hover,.thirdCard:hover{
   transform: scale(1.05);
@@ -123,7 +138,7 @@ flex-direction: row-reverse;
     border-top-left-radius:  25px;
 }
 .forthPage{
-    top: 100px;
+    width: 90%;
     margin: auto;
 display: flex;
 justify-content: center;
@@ -178,8 +193,11 @@ justify-content: center;
     margin-right: 10px;
 }
 .formArrow{
-    margin-left: 45%;
-    margin-top: -5%;
+    /* border: 1px solid black; */
+    /* height: 500px; */
+    /* width: fit-content; */
+    /* margin-top: -5%; */
+    margin-left: 60%;
 }
 
 .submitBtn{
@@ -210,7 +228,7 @@ justify-content: center;
 }
 .DreamPropHead{
     margin-left: 55px;
-    width: 80%;
+    width: 90%;
 }
 .formFillRadioBtnDiv{
     display: flex;
@@ -241,6 +259,7 @@ justify-content: center;
     border-radius: 50%;
     background: #18316e;
     cursor: pointer;
+    box-shadow: 0 5px 15px rgb(2, 2, 2);
   }
   .slider::-moz-range-thumb {
     width: 25px;
@@ -252,11 +271,14 @@ justify-content: center;
 
 .eightPageCont,.ninePage{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
+    /* width: 100%; */
 }
+
+
 .eightPageMain{
-margin: 200px 0;
+margin: 80px 0;
 }
 .eightPageHeading{
     text-align: center;
@@ -265,6 +287,9 @@ margin: 200px 0;
     padding: 10px 20px;
     margin: 45px 20px;
     border-radius: 20px;
+}
+.ninePageImg{
+    margin-left: 50px;
 }
 .eightPageContCmn:hover{
     box-shadow: 0 2px 5px rgb(47, 47, 47);
@@ -289,7 +314,7 @@ margin: 200px 0;
 }
 /* *************** 9th page  **************** */
 .ninePageCont{
-    max-width: 31%;
+    max-width: 42%;
 }
 .faqSideLeftDesign{
     position: relative;
@@ -297,7 +322,7 @@ margin: 200px 0;
     z-index: 1;   
 }
 .ninePageMain{
-    margin: 200px 0;
+    margin: 100px 0;
 }
 .ninePage{
     flex-direction: row-reverse;
@@ -332,6 +357,9 @@ margin: 200px 0;
     color:rgb(80, 80, 80);
     overflow: hidden;
 }
+.faqContDescBlock p{
+    padding: 10px 25px;
+}
 .faqFlexforIcon{
     display: flex;
     align-items: center;
@@ -346,7 +374,7 @@ margin: 200px 0;
 }
 /* ****************** 10 page ************** */
 .tenPageMain{
-    margin-top:  100px;
+    /* margin-top:  100px; */
 }
 .tenPage,.websiteInfo{
     display: flex;
@@ -394,6 +422,9 @@ margin: 200px 0;
     transition: all 0.5s ease;
 }
 /* *************************  11th page  **********************/
+.elevenPageMain{
+    margin-top: 50px;
+}
 .newsLetterFlexDiv{
     display: flex;
     align-items: center;
@@ -562,6 +593,12 @@ margin: 5px 0;
     .contactImg{
         margin: 0;
     }
+    .wlcmExtratxt{
+        padding-right: 10px;
+    }
+    .contactForm{
+        margin-top: 25px;
+    }
                                 
 }
 
@@ -576,6 +613,7 @@ margin: 5px 0;
 }
 .wlcmTitle{
     font-size: 25px;
+    font-weight: 00;
 }
 .wlcmExtratxt{
     font-size: 16px;
@@ -585,7 +623,7 @@ margin: 5px 0;
 }
 .cancelCont {
     font-size: 1rem;
-    padding: 0 30px;
+    padding: 0 19px;
 }
 .cancelHeading{
     font-size: 24px;
@@ -604,7 +642,7 @@ margin: 5px 0;
 }
 .DreamPropHead{
     margin-left: 0px;
-    padding: 0 30px;
+    padding: 0 40px;
     width: 100%;
     font-size: 28px;
 }
@@ -650,4 +688,22 @@ font-size: 25px;
 .secPageMain{
     margin-top: 20px;
 }
+.eightPageContCmn{
+    margin: 25px 20px;
+}
+}
+
+@media only screen and (max-width:369px){
+    .faqHeading{
+        font-size: 20px;
+        }
+        .ninePageCont{
+            font-size: 13px;
+        }
+        .eightPage{
+            font-size: 13px;
+        }
+        .footer a,.footer{
+         font-size: 14px;
+        }
 }

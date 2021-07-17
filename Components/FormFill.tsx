@@ -2,15 +2,47 @@ import styles from "./Home.module.css";
 import Image from "next/image";
 import cn from "classnames";
 import React, { useState, useRef } from "react";
-import InputRange from 'react-input-range';
 import { Slider } from "@material-ui/core"
+import { createMuiTheme } from "@material-ui/core/styles"
+import { ThemeProvider } from '@material-ui/styles';
+import { motion } from "framer-motion"
+import Zoom from "react-reveal";
+
+const muiTheme = createMuiTheme({
+    overrides: {
+        MuiSlider: {
+
+            rail: {
+                color: '#18316e'
+            },
+            root: {
+                color: "#091638",
+                height: 3,
+                padding: "13px 0",
+            },
+            track: {
+                height: 5,
+                borderRadius: 2,
+                color: '#18316e'
+
+            },
+            thumb: {
+                height: 20,
+                width: 20,
+                backgroundColor: "#091638",
+                border: "1px solid currentColor",
+                marginTop: -9,
+                marginLeft: -11,
+                boxShadow: "0 2px 15px gray",
+                color: "#fff",
+            },
+        }
+    }
+});
 
 export default function FormFill() {
 
-    const rangeInp = useRef(null);
-    // console.log(rangeInp.current);
-    const [range, setRange] = useState("50")
-    // console.log("range value is", range);
+    const [range, setRange] = useState("250")
 
 
 
@@ -19,13 +51,13 @@ export default function FormFill() {
             <div className={styles.forthPage}>
                 <div className={styles.formCont}>
 
-                    <h1 className={styles.DreamPropHead}>Let us help you win your dream home </h1>
+                    <Zoom cascade>  <h1 className={styles.DreamPropHead}>Let us help you win your dream home </h1> </Zoom>
 
                     <div className={styles.formArrow}>
-                        <Image height={500} width={600} src="/goToForm.svg" alt="" />
+                        <Image objectPosition="100% 50%" height={1000} width={1000} src="/goToForm.svg" alt="" />
                     </div>
                 </div>
-                <div className={styles.formDetail}>
+                <div id="applynowform" className={styles.formDetail}>
                     <div className={styles.form}>
                         <div className={styles.formHeading}>Apply Now</div>
                         <div className={styles.fillformDetail}>
@@ -160,11 +192,12 @@ export default function FormFill() {
                                         </div>
                                         <div className={styles.expectToSpend}>
                                             <label htmlFor="">How much do you expect to spend ?</label>
+                                            <p style={{ margin: "15px 0", color: "#091638" }}>Value : ${range}k<span id="demo"></span></p>
+                                            {/* 
                                             <div className="slidecontainer">
                                                 <input style={{ width: "100%", marginTop: "15px" }} onChange={(e) => { setRange(e.target.value) }} ref={rangeInp} type="range" min="250" max="1000000" value={range} className={styles.slider} id="myRange" />
                                                 <div style={{ display: "flex", justifyContent: "space-between", }}><span>250k</span> <span>1000000k</span></div>
-                                                <p style={{ margin: "15px 0", color: "#091638" }}>Value:{range}k<span id="demo"></span></p>
-                                            </div>
+                                            </div> */}
                                             {/* <InputRange
                                                 maxValue={20}
                                                 minValue={0}
@@ -177,19 +210,23 @@ export default function FormFill() {
                                                 aria-labelledby="discrete-slider-always"
                                                 valueLabelDisplay="on"
                                             /> */}
-                                            {/* <Slider
-                                                defaultValue={250}
-                                                // getAriaValueText={valuetext}
-                                                aria-labelledby="discrete-slider-small-steps"
-                                                // step={0.00000001}
-                                                // marks
-                                                valueLabelFormat={range}
-                                                onChange={(e) => { setRange(e.target.value) }}
-                                                min={250}
-                                                max={1000000}
-                                                valueLabelDisplay="auto"
-                                            /> */}
+                                            <ThemeProvider theme={muiTheme}>
+                                                <Slider
+                                                    defaultValue={250}
+                                                    aria-labelledby="discrete-slider-small-steps"
+                                                    onChange={(e, value) => {
+                                                        setRange(value.toString())
+                                                    }}
+                                                    min={250}
+                                                    max={1000000}
+                                                    // valueLabelDisplay="auto"
+                                                    style={{ color: "black" }}
+                                                />
+                                            </ThemeProvider>
+                                            <div style={{ display: "flex", justifyContent: "space-between", }}><span>$250k</span> <span>$10,00,000+</span></div>
+
                                         </div>
+                                        <br />
                                         <div className={styles.ZipDiv}>
                                             <label className={styles.labelOfForm} htmlFor="">
                                                 Zip Code Where are you looking to buy
