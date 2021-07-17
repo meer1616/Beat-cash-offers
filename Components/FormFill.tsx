@@ -192,7 +192,7 @@ export default function FormFill() {
                                         </div>
                                         <div className={styles.expectToSpend}>
                                             <label htmlFor="">How much do you expect to spend ?</label>
-                                            <p style={{ margin: "15px 0", color: "#091638" }}>Value : ${range}k<span id="demo"></span></p>
+                                            <p style={{ margin: "15px 0", color: "#091638" }}>Value : ${range}<span id="demo"></span></p>
                                             {/* 
                                             <div className="slidecontainer">
                                                 <input style={{ width: "100%", marginTop: "15px" }} onChange={(e) => { setRange(e.target.value) }} ref={rangeInp} type="range" min="250" max="1000000" value={range} className={styles.slider} id="myRange" />
@@ -212,18 +212,18 @@ export default function FormFill() {
                                             /> */}
                                             <ThemeProvider theme={muiTheme}>
                                                 <Slider
-                                                    defaultValue={250}
+                                                    defaultValue={250000}
                                                     aria-labelledby="discrete-slider-small-steps"
                                                     onChange={(e, value) => {
                                                         setRange(value.toString())
                                                     }}
-                                                    min={250}
+                                                    min={250000}
                                                     max={1000000}
                                                     // valueLabelDisplay="auto"
                                                     style={{ color: "black" }}
                                                 />
                                             </ThemeProvider>
-                                            <div style={{ display: "flex", justifyContent: "space-between", }}><span>$250k</span> <span>$10,00,000+</span></div>
+                                            <div style={{ display: "flex", justifyContent: "space-between", }}><span>$250,000</span> <span>$1,000,000+</span></div>
 
                                         </div>
                                         <br />

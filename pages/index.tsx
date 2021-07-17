@@ -17,7 +17,7 @@ export default function Home() {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta property="og:title" content="Farehomes" />
         <meta property="og:description" content="Farehomes Desc" />
-        <meta property="og:image" content="/logo.svg" />
+        <meta property="og:image" content={`/logo.svg`} />
         <meta property="og:image:alt" content="farehomes" />
         <meta property="og:image:height" content="200" />
         <meta property="og:image:width" content="200" />
