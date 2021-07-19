@@ -27,7 +27,7 @@ export default function Home() {
     <div>
       <Head>
         <title>Farehomes</title>
-        {/* <link rel="shortcut icon" href="../images/icons/favicon.ico" /> */}
+        <link rel="shortcut icon" href="/favicon.png" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta property="og:title" content="Write A Competitive Letter With Farehomes | Buy With Confidence" />
         <meta property="og:description" content="Farehomes Will Assist You To Draft An Offer Letter That Can Help You To Buy Home Free From Contingencies | Get Best Home Financing Offer Letter Near You." />
