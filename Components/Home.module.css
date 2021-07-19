@@ -92,6 +92,12 @@
     text-align: center;
     margin-bottom: 50px;
 }
+.CardImg,.cardinfoDiv{
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .firstCard,.secCard,.thirdCard{
     padding: 40px;
     width: 25%;
@@ -101,6 +107,7 @@
 }
 .cardinfoDiv{
     margin-top: 15px;
+    /* padding-top: 15px; */
 }
 .howitworkHeading{
     font-size: 36px;
@@ -466,7 +473,7 @@
     width: 80%;
     margin: auto;
     margin-top: 20px;
-    padding-top: 15px;
+    padding-top: 25px;
 }
 .footerLinks ul{
     padding: 0;
