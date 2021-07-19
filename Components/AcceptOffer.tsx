@@ -36,8 +36,8 @@ export default function AcceptOffer() {
                         <Image height={200} width={200} src="/card3.svg" alt="" />
                     </div>
                     <div className={styles.cardinfoDiv}>
-                        <p>Our Good As Cash Offer<sup>TM</sup> protects your earnest money deposits in
-                            the event that you loan proceeds do not arrive in time. You get confidence and the seller get the certainity. </p>
+                        <p>Our Good As Cash Offer™ protects your earnest money deposit in the event that your loan proceeds do not arrive in time. You get confidence and the seller gets certainty.
+                        </p>
 
                     </div>
                 </div>

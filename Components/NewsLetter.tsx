@@ -7,7 +7,7 @@ export default function NewsLetter() {
             <div className={styles.elevenPageMain}>
                 <div className={styles.elevenPage}>
 
-                    <h1 className={styles.contactHeading}>Sucbsribe Newsletter for </h1>
+                    <h1 className={styles.contactHeading}>Subscribe Newsletter for </h1>
                     <h1 style={{ marginBottom: "40px" }} className={styles.contactHeading}>Daily Updates</h1>
                     <div className={styles.newsLetterFlexDiv}>
                         <div className={styles.subscribeEmail}>
