@@ -9,11 +9,11 @@ export default function AcceptOffer() {
                 <div className={styles.firstCard}>
                     <div className={styles.CardImg}>
 
-                        <Image height={200} width={240} src="/card1.svg" alt="" />
+                        <Image height={200} width={240} src="/card1.png" alt="" />
                     </div>
                     <div className={styles.cardinfoDiv}>
 
-                        <p>After connecting with an approval lender*, we will work with them to make sure
+                        <p style={{ marginTop: "20px", marginBottom: "67px" }}>After connecting with an approval lender*, we will work with them to make sure
                             that you can submit a Good As Cash Offer </p>
                     </div>
                 </div>

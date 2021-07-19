@@ -4,6 +4,8 @@ import cn from "classnames";
 import { useEffect, useState } from "react";
 import { faqData } from './dataFaq'
 import Fade from 'react-reveal'
+import Slide from 'react-reveal';
+import Zoom from "react-reveal";
 export default function Faq() {
     const [list, setList] = useState(faqData);
 
@@ -42,7 +44,7 @@ export default function Faq() {
                                 <div className={data.open ? cn(styles.faqFlexforIcon, styles.faqContColor) : cn(styles.faqFlexforIcon, styles.faqCont)}>
                                     <p style={{ padding: "10px " }}>{data.que} </p><span className={styles.plusMinus} onClick={() => handleClick(data.id)}> {data.open ? '-' : "+"} </span>
                                 </div>
-                                <p className={data.open ? styles.faqContDescBlock : styles.faqContDescNone} >{data.ans}</p>
+                                <Slide > <p className={data.open ? styles.faqContDescBlock : styles.faqContDescNone} >{data.ans}</p></Slide>
                             </div>)
                         })}
 

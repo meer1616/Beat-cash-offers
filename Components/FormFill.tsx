@@ -5,8 +5,8 @@ import React, { useState, useRef } from "react";
 import { Slider } from "@material-ui/core"
 import { createMuiTheme } from "@material-ui/core/styles"
 import { ThemeProvider } from '@material-ui/styles';
-import { motion } from "framer-motion"
 import Zoom from "react-reveal";
+import { default as NumberFormat } from 'react-number-format';
 
 const muiTheme = createMuiTheme({
     overrides: {
@@ -42,7 +42,7 @@ const muiTheme = createMuiTheme({
 
 export default function FormFill() {
 
-    const [range, setRange] = useState("250")
+    const [range, setRange] = useState("250000")
 
 
 
@@ -105,17 +105,14 @@ export default function FormFill() {
                                             name="email"
                                         />
                                     </div>
-
                                 </div>
                                 <div className={styles.queDiv}>
-
                                     <label
                                         className={cn(styles.labelOfForm, styles.q2label)}
                                         htmlFor=""
                                     >
                                         Best Time to contact you
                                     </label>
-
                                     <div className={styles.formFillRadioBtnDiv}>
                                         <div>
 
@@ -125,11 +122,9 @@ export default function FormFill() {
                                                 name="q2"
                                                 value="rightNow"
                                             />
-
                                             <label className={styles.q2radioBtn} htmlFor=""> Morning</label>
                                         </div>
                                         <div>
-
                                             <input
                                                 type="radio"
                                                 id="q1no"
@@ -139,7 +134,6 @@ export default function FormFill() {
                                             <label className={styles.q2radioBtn} htmlFor=""> Afternoon</label>
                                         </div>
                                         <div>
-
                                             <input
                                                 type="radio"
                                                 id="q1no"
@@ -179,12 +173,10 @@ export default function FormFill() {
                                             </label>
                                             <div className={styles.formFillRadioBtnDiv}>
                                                 <div>
-
                                                     <input type="radio" id="q4yes" name="q4" value="Yes" />
                                                     <label className={styles.q1radioBtn} htmlFor=""> Yes</label>
                                                 </div>
                                                 <div>
-
                                                     <input type="radio" id="q4no" name="q4" value="No" />
                                                     <label htmlFor=""> No</label>
                                                 </div>
@@ -192,24 +184,7 @@ export default function FormFill() {
                                         </div>
                                         <div className={styles.expectToSpend}>
                                             <label htmlFor="">How much do you expect to spend ?</label>
-                                            <p style={{ margin: "15px 0", color: "#091638" }}>Value : ${range}<span id="demo"></span></p>
-                                            {/* 
-                                            <div className="slidecontainer">
-                                                <input style={{ width: "100%", marginTop: "15px" }} onChange={(e) => { setRange(e.target.value) }} ref={rangeInp} type="range" min="250" max="1000000" value={range} className={styles.slider} id="myRange" />
-                                                <div style={{ display: "flex", justifyContent: "space-between", }}><span>250k</span> <span>1000000k</span></div>
-                                            </div> */}
-                                            {/* <InputRange
-                                                maxValue={20}
-                                                minValue={0}
-                                                value={range}
-                                                onChange={(e) => { setRange(e.target.value) }} /> */}
-                                            {/* <Slider
-                                                onChange={(e) => { e.target.value }}
-                                                defaultValue={0}
-                                                value={range}
-                                                aria-labelledby="discrete-slider-always"
-                                                valueLabelDisplay="on"
-                                            /> */}
+                                            <p style={{ margin: "15px 0", color: "#091638" }} >Value : <NumberFormat value={range} displayType={'text'} thousandSeparator={true} prefix={'$'} /></p>
                                             <ThemeProvider theme={muiTheme}>
                                                 <Slider
                                                     defaultValue={250000}
@@ -219,12 +194,10 @@ export default function FormFill() {
                                                     }}
                                                     min={250000}
                                                     max={1000000}
-                                                    // valueLabelDisplay="auto"
                                                     style={{ color: "black" }}
                                                 />
                                             </ThemeProvider>
                                             <div style={{ display: "flex", justifyContent: "space-between", }}><span>$250,000</span> <span>$1,000,000+</span></div>
-
                                         </div>
                                         <br />
                                         <div className={styles.ZipDiv}>
@@ -238,7 +211,6 @@ export default function FormFill() {
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                         <div className={styles.submit}>
