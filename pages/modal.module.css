@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+.modalOuter{
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    /* position: relative; */
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 100vh;
+}
+.outerModalNone{
+    display: none;
+}
+.modalMain{
+    font-family: 'Poppins', sans-serif;
+    /* border: 1px solid black; */
+    top: 15%;
+    position: absolute;
+    left: 20%;
+    background-color: #fff;
+    z-index: 100;
+    margin: auto;
+    width:60%;
+    border-radius: 20px;
+    box-shadow: 0 3px 15px rgb(66, 66, 66);
+}
+.modalDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+    padding: 0 20px;
+
+}
+.modalSubmitDiv{
+    display: flex;
+    /* justify-content; */
+    border: 3px solid black;
+    border-radius: 25px;
+    /* width:50%; */
+    /* margin: auto; */
+    align-items: center;
+margin-top: 25px;
+    /* text-align: center; */
+}
+.modalSubmitDiv input,.modalSubmitDiv button{
+    /* margin: 10px; */
+
+    border: none;
+    /* border: 1px solid black; */
+    border-radius: 25px;
+}
+.modalSubmitDiv input{
+    width: 100%;
+    padding: 10px 30px;
+    outline: none;
+}
+.modalSubmitDiv button{
+    background-color: #161C48;
+    color: white;
+    padding: 10px 35px;
+}
+.modalSubmitDiv button:hover{
+    background-color: #283277;
+    cursor: pointer;
+}
+ .modalImgDiv{
+    width:55%;
+    /* border: 1px solid red; */
+}
+.modalContDiv {
+ width: 45%;
+ /* border: 1px solid red; */
+
+}
+.modalContDiv{
+    padding: 10px;
+}
+.orangeHeading{
+    font-weight: 600;
+    color: #FF6404;
+    text-align: center;
+}
+.modalSmallHeading{
+    text-align: center;
+    font-size: 24px;
+    font-weight: 400;
+}
+.closeModalIcon{
+    text-align: right;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+.Opacity{
+    /* opacity: 0; */
+    background-color:rgba(0, 0, 0, 1);
+    display: none;
+}
+@media only screen and (max-width:1038px){
+    .modalSubmitDiv,.modalDiv{
+        flex-direction: column;
+    }
+    .modalSmallHeading{
+        font-size: 16px;
+    }
+    .orangeHeading{
+        font-size: 20px;
+    }
+    .modalOuter{
+        height: 130vh;
+    }
+    .modalSubmitDiv{
+        border: none;
+    }
+    .modalSubmitDiv input{
+        border: 1px solid black;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+    .modalImgDiv{
+        width:100%;
+        /* border: 1px solid red; */
+    }
+    .modalContDiv {
+     width: 100%;
+     /* border: 1px solid red; */
+    
+    }
+    .modalMain{
+        top: 5%;
+        left: 5%;
+        width:90%;
+        border-radius: 20px;
+        box-shadow: 0 3px 15px rgb(66, 66, 66);
+    }
+   
+}

@@ -16,7 +16,7 @@ export default function Homei() {
             we help buyers put their best foot forward by enabling them to submit stronger offers with less risk so they can buy with confidence
           </p>
           <a href="#applynowform"> <button className={styles.applyBtnHome}>   Apply now </button></a>
-          <span className={styles.greenTxt} style={{ color: "rgb(37, 153, 37)", marginLeft: "20px", fontSize: "20px" }}> <FaArrowRight style={{ fontWeight: "lighter", marginTop: "20px" }}></FaArrowRight> Strengthen your offer today</span>
+          <span className={styles.greenTxt}> <FaArrowRight style={{ fontWeight: "lighter", marginTop: "20px" }}></FaArrowRight> Strengthen your offer today</span>
 
         </div>
         </Fade>

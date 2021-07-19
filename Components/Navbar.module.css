@@ -1,9 +1,9 @@
 .hamburger{
     display: none;
-    position: absolute;
+    /* position: absolute;
     top: 20px;
     right: 0;
-    margin-right: 25px;
+    margin-right: 25px; */
 }
 .navWrapper{
     margin-top: 10px;
