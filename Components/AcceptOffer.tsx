@@ -12,8 +12,7 @@ export default function AcceptOffer() {
                     </div>
                     <div style={{ marginTop: "15px" }} className={styles.cardinfoDiv}>
 
-                        <p >After connecting with an approval lender*, we will work with them to make sure
-                            that you can submit a Good As Cash Offer . Lorem ipsum dolor sit amet  </p>
+                        <p >After connecting with an approved lender*, we will work with them to make sure that your offer is &quot;as good as cash&quot;, buy getting you fully approved for a loan upfront.</p>
                     </div>
                 </div>
                 <div className={styles.firstCard}>

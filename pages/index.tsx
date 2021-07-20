@@ -38,7 +38,7 @@ export default function Home() {
         {/* <meta property="og:image:height" content="200" />
         <meta property="og:image:width" content="200" /> */}
       </Head>
-      {<Zoom >
+      {/* {<Zoom >
         <div className={modal ? styles.modalOuter : styles.outerModalNone}><div className={modal ? styles.modalMain : cn(styles.Opacity, styles.modalMain)}>
 
 
@@ -61,9 +61,9 @@ export default function Home() {
         </div>
         </div>
       </Zoom>
-      }
+      } */}
 
-      <div className={modal ? styles.Opacity : styles.abc}>
+      <div >
 
         <Navbar />
         <Homei />
@@ -71,7 +71,7 @@ export default function Home() {
         <AcceptOffer />
         <FormFill />
         <Faq />
-        <LatestPosts />
+        {/* <LatestPosts /> */}
         <Contact />
         <NewsLetter />
         <Footer />

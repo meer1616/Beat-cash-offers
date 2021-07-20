@@ -151,7 +151,7 @@ export default function FormFill() {
                                             className={cn(styles.labelOfForm, styles.q1label)}
                                             htmlFor=""
                                         >
-                                            Are you currently working with lender ?
+                                            Are you currently working with a lender?
                                         </label>
                                         <div className={styles.formFillRadioBtnDiv}>
                                             <div>
@@ -169,7 +169,7 @@ export default function FormFill() {
                                                 className={cn(styles.labelOfForm, styles.q1label)}
                                                 htmlFor=""
                                             >
-                                                Are you already working with an agent ?
+                                                Are you already working with an agent?
                                             </label>
                                             <div className={styles.formFillRadioBtnDiv}>
                                                 <div>
@@ -183,18 +183,33 @@ export default function FormFill() {
                                             </div>
                                         </div>
                                         <div className={styles.expectToSpend}>
-                                            <label htmlFor="">How much do you expect to spend ?</label>
+                                            <label htmlFor="">How much do you expect to spend?</label>
                                             <p style={{ margin: "15px 0", color: "#091638" }} >Value : <NumberFormat value={range} displayType={'text'} thousandSeparator={true} prefix={'$'} /></p>
                                             <ThemeProvider theme={muiTheme}>
-                                                <Slider
+                                                {/* <Slider
                                                     defaultValue={250000}
                                                     aria-labelledby="discrete-slider-small-steps"
                                                     onChange={(e, value) => {
                                                         setRange(value.toString())
                                                     }}
+                                                    step={50}
                                                     min={250000}
                                                     max={1000000}
                                                     style={{ color: "black" }}
+                                                /> */}
+                                                <Slider
+                                                    // defaultValue={0.00000005}
+                                                    defaultValue={250000}
+                                                    onChange={(e, value) => {
+                                                        setRange(value.toString())
+                                                    }}
+                                                    // getAriaValueText={valuetext}
+                                                    aria-labelledby="discrete-slider-small-steps"
+                                                    step={50}
+                                                    // marks
+                                                    min={250000}
+                                                    max={1000000}
+                                                // valueLabelDisplay="auto"
                                                 />
                                             </ThemeProvider>
                                             <div style={{ display: "flex", justifyContent: "space-between", }}><span>$250,000</span> <span>$1,000,000+</span></div>
@@ -202,7 +217,7 @@ export default function FormFill() {
                                         <br />
                                         <div className={styles.ZipDiv}>
                                             <label className={styles.labelOfForm} htmlFor="">
-                                                Zip Code Where are you looking to buy
+                                                Zip code where are you looking to buy
                                             </label>
                                             <input
                                                 className={cn(styles.inputOfForm, styles.concern)}

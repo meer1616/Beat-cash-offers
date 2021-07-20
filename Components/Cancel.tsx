@@ -10,11 +10,11 @@ export default function Cancel() {
                 <Fade right>
 
                     <div className={styles.cancelCont}>
-                        <h1 className={styles.cancelHeading}>Win more . Lose less .</h1>
+                        <h1 className={styles.cancelHeading}>Win more. Lose less.</h1>
                         <p>
-                            when you make a Good As Cash offer<sup>TM</sup>,you standout
-                            (in a good way) in sea of competition,and give sellers a reason
-                            to choose your offer over the rest
+                            When you make a Good As Cash Offer<sup>TM</sup>, you standout
+                            (in a good way) in sea of competition, and give sellers a reason
+                            to choose your offer over the rest.
                         </p>
                     </div>
                 </Fade>

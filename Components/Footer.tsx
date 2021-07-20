@@ -8,7 +8,7 @@ export default function Footer() {
             <div className={styles.footerHead}>
                 <div className={styles.logoLinks}>
                     <div className={styles.beatCashHeading}>
-                        <a href="#home"> <h1 className={styles.textALign} style={{ display: "inline-block" }}>BeatCash</h1><span style={{ fontSize: "30px" }}>offer.com</span></a>
+                        <a href="#home"> <h1 className={styles.textALign} style={{ display: "inline-block" }}>BeatCash</h1><span style={{ fontSize: "30px" }}>offers.com</span></a>
                     </div>
                     <div className={styles.footerLinks}>
                         <ul>
@@ -37,9 +37,9 @@ export default function Footer() {
             <div className={styles.footerHead}>
                 <div className={styles.fotterInfo}>
                     <p> &copy; 2021, All Rights Reserved By Farehomes, Powered by <a href="#" target="_blank" style={{ textDecoration: "underline" }}> Qwertyvate </a> </p>
-                    <p> beatcashoffers.com is offered by Sonoma Pacific Reality,a licensed California real estate broker DRE #02137040  </p>
+                    <p> beatcashoffers.com is offered by Sonoma Pacific Reality, a licensed California real estate broker DRE #02137040  </p>
                     <p> All homes are subject to approval and must be listed with an MLS. All homes are subject to inspections and other limitations.</p>
-                    <li style={{ paddingBottom: "30px" }}> All lender are subject to approval before a good As Cash Offer<sup style={{ fontSize: "10px" }}>TM</sup> can be made.</li>
+                    <li style={{ paddingBottom: "30px", listStyle: "none" }}>* All lender are subject to approval before a good As Cash Offer<sup style={{ fontSize: "10px" }}>TM</sup> can be made.</li>
                 </div>
                 <div className={styles.socialIcons}>
                     <a target="_blank" href="">Terms & Conditions</a> <a href="" target="_blank">Privacy & Policy</a>
