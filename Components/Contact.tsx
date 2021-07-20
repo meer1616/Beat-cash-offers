@@ -2,8 +2,47 @@ import styles from "./Home.module.css";
 import Image from "next/image";
 import cn from "classnames";
 import Fade from 'react-reveal'
+import { useState } from "react";
 
 export default function Contact() {
+    const [data, setData] = useState({
+        firstname: "",
+        lastname: "",
+        phonenumber: "",
+        email: "",
+      });
+    
+      const { firstname, lastname, phonenumber, email } = data;
+    
+      const handleChange = (e: any) => {
+        setData({ ...data, [e.target.name]: e.target.value });
+      };
+    
+      const handleSubmit = async (e: any) => {
+        e.preventDefault();
+        try {
+          const response = await fetch(
+            "https://v1.nocodeapi.com/riya03/google_sheets/yjCpsRsbyiBxlsCy?tabId=Sheet1",
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify([
+                [
+                  firstname,
+                  lastname,
+                  phonenumber,
+                  email,
+                  new Date().toLocaleString(),
+                ],
+              ]),
+            }
+          );
+          await response.json()
+          setData({...data , firstname: "" , lastname : "" , phonenumber:"" , email : "" })
+        } catch (err) {
+            console.log(err)
+        }
+      };
     return (
         <div id="contactus" className={styles.tenPageMain}>
 
@@ -20,7 +59,7 @@ export default function Contact() {
                     <div className={styles.contactForm}>
                         <div className={cn(styles.contactInfoCont, styles.ContactUsform)}>
                             <h1 className={styles.contactHeading}>Get in Touch with Us</h1>
-                            <form method="POST">
+                            <form method="POST" onSubmit={handleSubmit}>
                                 <div>
                                     <label className={styles.labelOfForm} htmlFor="">
                                         First Name
@@ -29,6 +68,8 @@ export default function Contact() {
                                         className={cn(styles.inputOfForm, styles.inputOfContactUsForm)}
                                         type="text"
                                         name="firstname"
+                                        value={firstname}
+                                        onChange={handleChange}
                                     />
                                 </div>
                                 <div>
@@ -39,6 +80,8 @@ export default function Contact() {
                                         className={cn(styles.inputOfForm)}
                                         type="text"
                                         name="lastname"
+                                        value={lastname}
+                      onChange={handleChange}
                                     />
                                 </div>
                                 <div>
@@ -48,7 +91,9 @@ export default function Contact() {
                                     <input
                                         className={cn(styles.inputOfForm, styles.inputOfContactUsForm)}
                                         type="phone number"
-                                        name="phone number"
+                                        name="phonenumber"
+                                        value={phonenumber}
+                      onChange={handleChange}
                                     />
                                 </div>
                                 <div>
@@ -59,6 +104,8 @@ export default function Contact() {
                                         className={styles.inputOfForm}
                                         type="email"
                                         name="email"
+                                        value={email}
+                                        onChange={handleChange}
                                     />
                                 </div>
                                 <div className={styles.contactUsSubmitDiv}>
