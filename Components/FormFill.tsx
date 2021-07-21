@@ -22,7 +22,7 @@ const muiTheme = createMuiTheme({
       track: {
         height: 5,
         borderRadius: 2,
-        color: "#18316e",
+        color: "#18316e"
       },
       thumb: {
         height: 20,
@@ -38,8 +38,119 @@ const muiTheme = createMuiTheme({
   },
 });
 
+const resetTheme = createMuiTheme({
+  overrides: {
+    MuiSlider: {
+      rail: {
+        color: "#18316e",
+      },
+      root: {
+        color: "#091638",
+        height: 3,
+        padding: "13px 0",
+      },
+      track: {
+        height: 5,
+        borderRadius: 2,
+        color: "#18316e",
+        width : "0%"
+      },
+      thumb: {
+        left:"0%",
+        height: 20,
+        // width: 20,
+        backgroundColor: "#091638",
+        border: "1px solid currentColor",
+        marginTop: -9,
+        marginLeft: -11,
+        boxShadow: "0 2px 15px gray",
+        color: "#fff",
+      },
+    },
+  },
+});
+
+
 export default function FormFill() {
   const [range, setRange] = useState("250000");
+  const [timeToContact, setTimeToContact] = useState("");
+  const [lender, setLender] = useState("");
+  const [agent, setAgent] = useState("");
+  const [reset , setReset] = useState(false)
+  console.log("reset",reset)
+
+
+  console.log("timetocontact", timeToContact);
+  console.log("lender", lender);
+  console.log("agent", agent);
+
+  const [data, setData] = useState({
+    firstname: "",
+    lastname: "",
+    phonenumber: "",
+    email: "",
+    zipCode:""
+  });
+
+  const {
+    firstname,
+    lastname,
+    phonenumber,
+    email,
+    zipCode
+  } = data;
+
+  const handleChange = (e: any) => {
+    setData({ ...data, [e.target.name]: e.target.value });
+
+  };
+
+  console.log("timeToContact",timeToContact);
+  
+
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+    setReset(true)
+    try {
+      const response = await fetch(
+        "https://v1.nocodeapi.com/riya03/google_sheets/YHYJeleCHzIhIShi?tabId=Sheet1",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify([
+            [
+              firstname,
+              lastname,
+              phonenumber,
+              email,
+              timeToContact,
+              lender,
+              agent,
+              range,
+              zipCode,
+              new Date().toLocaleString(),
+            ],
+          ]),
+        }
+      );
+      await response.json();
+      setData({
+        ...data,
+        firstname: "",
+        lastname: "",
+        phonenumber: "",
+        email: "",
+        zipCode:""
+      });
+      setTimeToContact("")
+      setAgent("")
+      setLender("")
+      setRange("250000")
+      
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <div id="applynow" className={styles.forthPageMain}>
@@ -76,7 +187,8 @@ export default function FormFill() {
                       className={styles.inputOfForm}
                       type="text"
                       name="firstname"
-                     
+                      value={firstname}
+                      onChange={handleChange}
                     />
                   </div>
                   <div className={cn(styles.fname, styles.gapbtwnElem)}>
@@ -87,7 +199,8 @@ export default function FormFill() {
                       className={styles.inputOfForm}
                       type="text"
                       name="lastname"
-                      
+                      value={lastname}
+                      onChange={handleChange}
                     />
                   </div>
                 </div>
@@ -100,7 +213,8 @@ export default function FormFill() {
                       className={styles.inputOfForm}
                       type="phone number"
                       name="phonenumber"
-                      
+                      value={phonenumber}
+                      onChange={handleChange}
                     />
                   </div>
                   <div className={cn(styles.fname, styles.gapbtwnElem)}>
@@ -111,7 +225,8 @@ export default function FormFill() {
                       className={styles.inputOfForm}
                       type="email"
                       name="email"
-                  
+                      value={email}
+                      onChange={handleChange}
                     />
                   </div>
                 </div>
@@ -128,10 +243,11 @@ export default function FormFill() {
                         type="radio"
                         id="q1yes"
                         name="q2"
-                        value="rightNow"
+                        value="Morning"
+                        // onChange={(e)=>{setTimeToContact(e.target.value)}}
+                        onChange={(e)=>{setTimeToContact(e.target.value)}}
                       />
                       <label className={styles.q2radioBtn} htmlFor="">
-                        {" "}
                         Morning
                       </label>
                     </div>
@@ -140,10 +256,10 @@ export default function FormFill() {
                         type="radio"
                         id="q1no"
                         name="q2"
-                        value="withinAMonth"
+                        value="Afternoon"
+                        onChange={(e)=>{setTimeToContact(e.target.value)}}
                       />
                       <label className={styles.q2radioBtn} htmlFor="">
-                        {" "}
                         Afternoon
                       </label>
                     </div>
@@ -152,7 +268,9 @@ export default function FormFill() {
                         type="radio"
                         id="q1no"
                         name="q2"
-                        value="justLookingAround  "
+                        value="Evening"
+                        onChange={(e)=>{setTimeToContact(e.target.value)}}
+                        // onChange={handleChange}
                       />
                       <label htmlFor=""> Evening</label>
                     </div>
@@ -169,14 +287,28 @@ export default function FormFill() {
                     </label>
                     <div className={styles.formFillRadioBtnDiv}>
                       <div>
-                        <input type="radio" id="q1yes" name="q1" value="Yes" />
+                        <input
+                          type="radio"
+                          id="q1yes"
+                          name="q1"
+                          value="Yes"
+                            onChange={(e)=>{setLender(e.target.value)}}
+                          // }
+                          // onChange={handleChange}
+                        />
                         <label className={styles.q1radioBtn} htmlFor="">
-                          {" "}
                           Yes
                         </label>
                       </div>
                       <div>
-                        <input type="radio" id="q1no" name="q1" value="No" />
+                        <input
+                          type="radio"
+                          id="q1no"
+                          name="q1"
+                          value="No"
+                          onChange={(e)=>{setLender(e.target.value)}}
+                          // onChange={handleChange}
+                        />
                         <label htmlFor=""> No</label>
                       </div>
                     </div>
@@ -195,6 +327,8 @@ export default function FormFill() {
                             id="q4yes"
                             name="q4"
                             value="Yes"
+                            onChange={(e)=>{setAgent(e.target.value)}}
+                            // onChange={handleChange}
                           />
                           <label className={styles.q1radioBtn} htmlFor="">
                             {" "}
@@ -202,7 +336,14 @@ export default function FormFill() {
                           </label>
                         </div>
                         <div>
-                          <input type="radio" id="q4no" name="q4" value="No" />
+                          <input
+                            type="radio"
+                            id="q4no"
+                            name="q4"
+                            value="No"
+                            onChange={(e)=>{setAgent(e.target.value)}}
+                            // onChange={handleChange}
+                          />
                           <label htmlFor=""> No</label>
                         </div>
                       </div>
@@ -230,20 +371,38 @@ export default function FormFill() {
                                                     max={1000000}
                                                     style={{ color: "black" }}
                                                 /> */}
-                        <Slider
-                          // defaultValue={0.00000005}
-                          defaultValue={250000}
-                          onChange={(e, value) => {
-                            setRange(value.toString());
-                          }}
-                          // getAriaValueText={valuetext}
-                          aria-labelledby="discrete-slider-small-steps"
-                          step={50}
-                          // marks
-                          min={250000}
-                          max={1000000}
-                          // valueLabelDisplay="auto"
-                        />
+                                                {
+                                                  reset ? (
+                                                    <Slider
+                                                    // defaultValue={0.00000005}
+                                                    defaultValue={250000}
+                                                    
+                                                    // getAriaValueText={valuetext}
+                                                    aria-labelledby="discrete-slider-small-steps"
+                                                    step={50}
+                                                    // marks
+                                                    min={250000}
+                                                    max={1000000}
+                                                    // valueLabelDisplay="auto"
+                                                  />
+                                                  ):(
+                                                    <Slider
+                                                    // defaultValue={0.00000005}
+                                                    defaultValue={250000}
+                                                    onChange={(e, value) => {
+                                                      setRange(value.toString());
+                                                    }}
+                                                    // getAriaValueText={valuetext}
+                                                    aria-labelledby="discrete-slider-small-steps"
+                                                    step={50}
+                                                    // marks
+                                                    min={250000}
+                                                    max={1000000}
+                                                    // valueLabelDisplay="auto"
+                                                  />
+                                                  )
+                                                }
+                       
                       </ThemeProvider>
                       <div
                         style={{
@@ -261,7 +420,10 @@ export default function FormFill() {
                       </label>
                       <input
                         className={cn(styles.inputOfForm, styles.concern)}
-                        type="text"
+                        type="zipCode"
+                        name="zipCode"
+                        value={zipCode}
+                        onChange={handleChange}
                       />
                     </div>
                   </div>
@@ -269,7 +431,11 @@ export default function FormFill() {
               </div>
             </div>
             <div className={styles.submit}>
-              <button type="submit" className={styles.submitBtn}>
+              <button
+                type="submit"
+                className={styles.submitBtn}
+                onClick={handleSubmit}
+              >
                 Submit
               </button>
             </div>
@@ -279,3 +445,7 @@ export default function FormFill() {
     </div>
   );
 }
+function reset(reset: any) {
+  throw new Error("Function not implemented.");
+}
+
