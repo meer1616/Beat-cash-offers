@@ -6,10 +6,18 @@ import { faqData } from './dataFaq'
 import Fade from 'react-reveal'
 import Slide from 'react-reveal';
 import Zoom from "react-reveal";
+import ReactGA from "react-ga"
+
 export default function Faq() {
     const [list, setList] = useState(faqData);
 
     const handleClick = (id: number) => {
+
+        ReactGA.event({
+            category: "Click Element",
+            action: `clicked the span in Faq ${id}`
+        })
+
         {
             const things = list.map((item) => {
                 if (item.id === id) {
