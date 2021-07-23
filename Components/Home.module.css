@@ -198,7 +198,7 @@
     margin-right: 10px;
 }
 .formArrow{
-    margin-left: 50%;
+    margin-left: 55%;
 }
 .submitBtn{
     font-size: 20px;
@@ -401,7 +401,7 @@
     background-color: transparent;
     padding: 15px 50px;
     border: 1px solid #091638;
-    border-radius: 20px;
+    border-radius: 35px;
     margin: 25px;
     font-weight: bold;
     width: 50%;

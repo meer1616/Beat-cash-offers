@@ -135,9 +135,9 @@ export default function FormFill() {
             <Image
               objectPosition="100% 50%"
               height={1000}
-              width={1000}
-              src="/goToForm.svg"
-              alt=""
+              width={1200}
+              src="/gotoForm.png"
+              alt="arrow"
             />
           </div>
         </div>
@@ -376,7 +376,7 @@ export default function FormFill() {
                             // getAriaValueText={valuetext}
                             aria-labelledby="discrete-slider-small-steps"
                             step={50000}
-                            marks
+                            // marks
                             min={250000}
                             max={1000000}
                           // valueLabelDisplay="auto"
