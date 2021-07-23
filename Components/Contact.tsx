@@ -5,6 +5,10 @@ import Fade from "react-reveal";
 import { useState } from "react";
 
 export default function Contact() {
+
+  let contactUsAPI: any;
+  contactUsAPI = process.env.NEXT_PUBLIC_ContactUs;
+
   const [data, setData] = useState({
     firstname: "",
     lastname: "",
@@ -22,7 +26,7 @@ export default function Contact() {
     e.preventDefault();
     try {
       const response = await fetch(
-        "https://v1.nocodeapi.com/riya03/google_sheets/yjCpsRsbyiBxlsCy?tabId=Sheet1",
+        contactUsAPI,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

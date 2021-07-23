@@ -4,6 +4,12 @@ import { useState } from "react";
 
 
 export default function NewsLetter() {
+
+  // console.log(process.env.NEXT_PUBLIC_NewsLetter);
+
+  let newsLetterAPI: any;
+  newsLetterAPI = process.env.NEXT_PUBLIC_NewsLetter;
+
   const [data, setData] = useState("");
 
   const handleChange = (e: any) => {
@@ -14,7 +20,7 @@ export default function NewsLetter() {
     e.preventDefault();
     try {
       const response = await fetch(
-        "https://v1.nocodeapi.com/riya03/google_sheets/MkQuArBHxEgutRAo?tabId=Sheet1",
+        newsLetterAPI,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

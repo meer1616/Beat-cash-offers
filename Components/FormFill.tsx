@@ -3,12 +3,12 @@ import Image from "next/image";
 import cn from "classnames";
 import React, { useState, useRef } from "react";
 import { Slider } from "@material-ui/core";
-import { createMuiTheme } from "@material-ui/core/styles";
+import { createTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
 import Zoom from "react-reveal";
 import { default as NumberFormat } from "react-number-format";
 
-const muiTheme = createMuiTheme({
+const muiTheme = createTheme({
   overrides: {
     MuiSlider: {
       rail: {
@@ -38,37 +38,7 @@ const muiTheme = createMuiTheme({
   },
 });
 
-const resetTheme = createMuiTheme({
-  overrides: {
-    MuiSlider: {
-      rail: {
-        color: "#18316e",
-      },
-      root: {
-        color: "#091638",
-        height: 3,
-        padding: "13px 0",
-      },
-      track: {
-        height: 5,
-        borderRadius: 2,
-        color: "#18316e",
-        width: "0%"
-      },
-      thumb: {
-        left: "0%",
-        height: 20,
-        // width: 20,
-        backgroundColor: "#091638",
-        border: "1px solid currentColor",
-        marginTop: -9,
-        marginLeft: -11,
-        boxShadow: "0 2px 15px gray",
-        color: "#fff",
-      },
-    },
-  },
-});
+
 
 
 export default function FormFill() {
@@ -78,6 +48,9 @@ export default function FormFill() {
   const [agent, setAgent] = useState("");
   const [reset, setReset] = useState(false)
   const [afterSubmit, setAfterSubmit] = useState(false);
+
+  let formFillAPI: any;
+  formFillAPI = process.env.NEXT_PUBLIC_FormFill;
 
   const [data, setData] = useState({
     firstname: "",
@@ -108,7 +81,7 @@ export default function FormFill() {
     setReset(true)
     try {
       const response = await fetch(
-        "https://v1.nocodeapi.com/riya03/google_sheets/YHYJeleCHzIhIShi?tabId=Sheet1",
+        formFillAPI,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
