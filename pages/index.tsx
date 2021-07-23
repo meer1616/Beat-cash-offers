@@ -20,7 +20,7 @@ import cn from "classnames"
 
 export default function Home() {
 
-  const [modal, setModal] = useState(true)
+  // const [modal, setModal] = useState(true)
 
   return (
 
