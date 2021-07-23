@@ -78,12 +78,6 @@ export default function FormFill() {
   const [agent, setAgent] = useState("");
   const [reset, setReset] = useState(false)
   const [afterSubmit, setAfterSubmit] = useState(false);
-  // console.log("reset", reset)
-
-
-  // console.log("timetocontact", timeToContact);
-  // console.log("lender", lender);
-  // console.log("agent", agent);
 
   const [data, setData] = useState({
     firstname: "",
@@ -105,9 +99,6 @@ export default function FormFill() {
     setData({ ...data, [e.target.name]: e.target.value });
 
   };
-
-  console.log("timeToContact", timeToContact);
-
 
   const handleSubmit = async (e: any) => {
 
@@ -149,7 +140,7 @@ export default function FormFill() {
       setTimeToContact("")
       setAgent("")
       setLender("")
-      setRange("250000")
+      // setRange("250000")
 
     } catch (err) {
       console.log(err);

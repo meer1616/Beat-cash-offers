@@ -1,8 +1,17 @@
 import styles from "./Home.module.css";
 import React from "react";
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa"
+import ReactGA from 'react-ga'
 
 export default function Footer() {
+
+    const handleClick = (socialIcon: String) => {
+        ReactGA.event({
+            category: "Click Element",
+            action: `clicked ${socialIcon}`
+        })
+
+    }
     return (
         <footer className={styles.footer}>
             <div className={styles.footerHead}>
@@ -36,14 +45,14 @@ export default function Footer() {
             <hr style={{ margin: "20px" }} />
             <div className={styles.footerHead}>
                 <div className={styles.fotterInfo}>
-                    <p> &copy; 2021, All Rights Reserved By Farehomes, Powered by <a href="#" target="_blank" style={{ textDecoration: "underline" }}> Qwertyvate </a> </p>
+                    <p> &copy; 2021, All Rights Reserved By Farehomes, Powered by <a href="https://qwertyvate.com" target="_blank" style={{ textDecoration: "underline" }} rel="noreferrer"> Qwertyvate </a> </p>
                     <p> beatcashoffers.com is offered by Sonoma Pacific Reality, a licensed California real estate broker DRE #02137040  </p>
                     <p> All homes are subject to approval and must be listed with an MLS. All homes are subject to inspections and other limitations.</p>
                     <li style={{ paddingBottom: "30px", listStyle: "none" }}>* All lender are subject to approval before a good As Cash Offer<sup style={{ fontSize: "10px" }}>TM</sup> can be made.</li>
                 </div>
                 <div className={styles.socialIcons}>
                     <a target="_blank" href="">Terms & Conditions</a> <a href="" target="_blank">Privacy & Policy</a>
-                    <p ><a target="_blank" href=""><FaFacebookF />  </a> <a target="_blank" href=""><FaTwitter /></a> <a target="_blank" href=""><FaInstagram /></a></p>
+                    <p ><a onClick={() => handleClick('Facebook')} target="_blank" href=""><FaFacebookF />  </a> <a onClick={() => handleClick('Twitter')} target="_blank" href=""><FaTwitter /></a> <a onClick={() => handleClick('Instagram')} target="_blank" href=""><FaInstagram /></a></p>
                 </div>
             </div>
         </footer>

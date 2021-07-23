@@ -2,6 +2,7 @@ import styles from "./Home.module.css";
 import Zoom from "react-reveal";
 import { useState } from "react";
 
+
 export default function NewsLetter() {
   const [data, setData] = useState("");
 
