@@ -22,7 +22,7 @@ export default function Cancel() {
 
                     <div className={styles.cancelContCard}>
 
-                        <Image height={950} width={1000} src="/winLose.svg" alt="" />
+                        <Image height={900} width={950} src="/wimmore.svg" alt="" />
 
 
                     </div>

@@ -114,7 +114,7 @@
 }
 .firstCard:hover,.secCard:hover,.thirdCard:hover{
     transform: scale(1.05);
-    background-color: rgb(245, 245, 245);
+    background-color: #f3f3fa;
     cursor: pointer;
 }
 .CardImg{

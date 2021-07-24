@@ -8,7 +8,7 @@ export default function AcceptOffer() {
             <div className={styles.thirdPage}>
                 <div className={styles.firstCard}>
                     <div className={styles.CardImg}>
-                        <Image height={200} width={230} src="/card1.png" alt="" />
+                        <Image height={200} width={250} src="/card1new.svg" alt="" />
                     </div>
                     <div style={{ marginTop: "15px" }} className={styles.cardinfoDiv}>
 
@@ -18,7 +18,7 @@ export default function AcceptOffer() {
                 <div className={styles.firstCard}>
                     <div className={styles.CardImg}>
 
-                        <Image height={200} width={220} src="/card2.png" alt="" />
+                        <Image height={200} width={220} src="/card2new.svg" alt="" />
                     </div>
                     <div className={styles.cardinfoDiv}>
                         <p >We&apos;ll help you find the perfect home and write a competitive offer without
