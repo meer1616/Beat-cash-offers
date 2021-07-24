@@ -1,15 +1,10 @@
 .hamburger{
     display: none;
-    /* position: absolute;
-    top: 20px;
-    right: 0;
-    margin-right: 25px; */
 }
 .navWrapper{
     margin-top: 10px;
 }
 .mainNav{
-
     position: relative;
     display: flex;
     align-items: center;

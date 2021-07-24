@@ -10,7 +10,6 @@ export default function Footer() {
             category: "Click Element",
             action: `clicked ${socialIcon}`
         })
-
     }
     return (
         <footer className={styles.footer}>

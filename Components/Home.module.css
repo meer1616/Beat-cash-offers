@@ -288,7 +288,7 @@
 .ninePageImg{
     margin-left: 50px;
 }
-.eightPageContCmn:hover{
+/* .eightPageContCmn:hover{
     box-shadow: 0 2px 5px rgb(47, 47, 47);
     transform: scale(1.15);
     cursor: pointer;
@@ -298,7 +298,7 @@
     background-size: cover;
     background-blend-mode: darken;
     z-index: 10;
-}
+} */
 .eightPage{
     width: 80%;
     margin: auto;

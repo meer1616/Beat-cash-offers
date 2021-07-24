@@ -5,7 +5,6 @@ import Fade from 'react-reveal';
 
 export default function Homei() {
   return (
-
     <div id="home" className={styles.mainHome}>
 
       <div className={styles.homeContainer}>

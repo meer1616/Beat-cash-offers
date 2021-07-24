@@ -1,6 +1,5 @@
 import styles from "./Home.module.css";
 import Image from "next/image";
-import cn from "classnames";
 import Fade from 'react-reveal';
 
 export default function Cancel() {
@@ -8,7 +7,6 @@ export default function Cancel() {
         <div id="winlose" className={styles.secPageMain}>
             <div className={styles.secPage}>
                 <Fade right>
-
                     <div className={styles.cancelCont}>
                         <h1 className={styles.cancelHeading}>Win more. Lose less.</h1>
                         <p>
@@ -19,15 +17,10 @@ export default function Cancel() {
                     </div>
                 </Fade>
                 <Fade left>
-
                     <div className={styles.cancelContCard}>
-
                         <Image height={900} width={950} src="/wimmore.svg" alt="" />
-
-
                     </div>
                 </Fade>
-
             </div>
         </div>
     )

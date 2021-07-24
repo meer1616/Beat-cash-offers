@@ -4,8 +4,6 @@ import cn from "classnames";
 import { useEffect, useState } from "react";
 import { faqData } from './dataFaq'
 import Fade from 'react-reveal'
-import Slide from 'react-reveal';
-import Zoom from "react-reveal";
 import ReactGA from "react-ga"
 
 export default function Faq() {
@@ -55,7 +53,6 @@ export default function Faq() {
                                 <p className={data.open ? styles.faqContDescBlock : styles.faqContDescNone} >{data.ans}</p>
                             </div>)
                         })}
-
                     </div>
                 </Fade>
             </div>

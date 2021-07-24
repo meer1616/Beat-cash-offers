@@ -1,6 +1,5 @@
 import styles from "./Home.module.css";
 import Image from "next/image";
-import cn from "classnames";
 import { FaCalendarAlt } from 'react-icons/fa'
 export default function LatestPosts() {
     return (

@@ -1,7 +1,7 @@
 import styles from "./Home.module.css";
 import Image from "next/image";
 import cn from "classnames";
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { Slider } from "@material-ui/core";
 import { createTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
@@ -37,9 +37,6 @@ const muiTheme = createTheme({
     },
   },
 });
-
-
-
 
 export default function FormFill() {
   const [range, setRange] = useState("250000");
@@ -113,8 +110,6 @@ export default function FormFill() {
       setTimeToContact("")
       setAgent("")
       setLender("")
-      // setRange("250000")
-
     } catch (err) {
       console.log(err);
     }

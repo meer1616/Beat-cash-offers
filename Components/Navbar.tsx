@@ -1,9 +1,7 @@
-// import styles from "./Navbar.module.css";
 import Image from "next/image";
 import { FaBars } from 'react-icons/fa';
 import { useState, useRef } from "react";
 import Zoom from "react-reveal"
-
 
 export default function Navbar() {
 
@@ -11,7 +9,6 @@ export default function Navbar() {
   const [classList, setClassList] = useState(false)
 
   return (
-
     <nav className='navWrapper'>
       <Zoom cascade>
         <div
@@ -20,7 +17,6 @@ export default function Navbar() {
             <Image height={50} width={250} src="/logo.svg" alt="" />
           </div>
           <div ref={inputRef} className={`${classList ? 'links onClickHamburger' : 'links'}`}>
-
             <div className='linkContent'>
               <ul ref={inputRef} className={`${classList ? 'ul linkContentResp' : 'ul'}`}>
                 <li>
@@ -44,7 +40,6 @@ export default function Navbar() {
               </ul>
             </div>
           </div>
-
           <div className='sigup'>
             <div className='applyNow'>
               <a href="#applynowform"><button className='applyBtn'> Apply Now  </button> </a>

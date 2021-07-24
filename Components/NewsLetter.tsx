@@ -2,10 +2,7 @@ import styles from "./Home.module.css";
 import Zoom from "react-reveal";
 import { useState } from "react";
 
-
 export default function NewsLetter() {
-
-  // console.log(process.env.NEXT_PUBLIC_NewsLetter);
 
   let newsLetterAPI: any;
   newsLetterAPI = process.env.NEXT_PUBLIC_NewsLetter;
