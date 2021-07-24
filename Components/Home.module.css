@@ -94,9 +94,9 @@
 }
 .CardImg,.cardinfoDiv{
     /* border: 1px solid black; */
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
 }
 .firstCard,.secCard,.thirdCard{
     padding: 40px;
@@ -118,9 +118,9 @@
     cursor: pointer;
 }
 .CardImg{
-    display:flex ;
+    /* display:flex ;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
 }
 .forthPageMain{
     margin-top: 100px;
