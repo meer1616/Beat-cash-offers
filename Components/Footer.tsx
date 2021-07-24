@@ -16,7 +16,7 @@ export default function Footer() {
             <div className={styles.footerHead}>
                 <div className={styles.logoLinks}>
                     <div className={styles.beatCashHeading}>
-                        <a href="#home"> <h1 className={styles.textALign} style={{ display: "inline-block" }}>BeatCash</h1><span style={{ fontSize: "30px" }}>offers.com</span></a>
+                        <a href="#home"> <h1 className={styles.textALign} style={{ display: "inline-block" }}>beatcash</h1><span style={{ fontSize: "30px" }}>offers.com</span></a>
                     </div>
                     <div className={styles.footerLinks}>
                         <ul>
