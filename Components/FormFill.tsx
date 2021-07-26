@@ -392,7 +392,7 @@ export default function FormFill() {
                     <br />
                     <div className={styles.ZipDiv}>
                       <label className={styles.labelOfForm} htmlFor="">
-                        Zip code where are you looking to buy
+                        What zipcode are you looking in?
                       </label>
                       <input
                         className={cn(styles.inputOfForm, styles.concern)}

@@ -100,7 +100,7 @@ box-shadow: 0px 0px 8px black;
     }
   .ul{
       flex-direction: column;
-      transform: translateX(-400%);
+      transform: translateX(300%);
       height: 0px;
       transition: all 0.7s ease;
       overflow: hidden;
