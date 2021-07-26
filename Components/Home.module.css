@@ -92,14 +92,14 @@
     text-align: center;
     margin-bottom: 50px;
 }
-.CardImg,.cardinfoDiv{
+/* .CardImg,.cardinfoDiv{ */
     /* border: 1px solid black; */
     /* display: flex;
     justify-content: center;
     align-items: center; */
-}
+/* } */
 .firstCard,.secCard,.thirdCard{
-    padding: 40px;
+    padding: 30px;
     width: 25%;
     border-radius: 25px;
     box-shadow: 0 5px 20px rgb(218, 218, 218) ;
@@ -118,9 +118,9 @@
     cursor: pointer;
 }
 .CardImg{
-    /* display:flex ;
+    display:flex ;
     justify-content: center;
-    align-items: center; */
+    align-items: center;
 }
 .forthPageMain{
     margin-top: 100px;
@@ -511,6 +511,24 @@
 .socialIcons p a{
     font-size: 24px;
     margin-left: 10px;
+}
+@media only screen and (max-width:1255px){
+    /* .cardinfoDiv{
+        margin-top: 35px;
+    } */
+    .thirdPageMain p {
+        letter-spacing: 0.2px;
+    }
+
+}
+@media only screen and (max-width:1148px){
+    /* .cardinfoDiv{
+        margin-top: 35px;
+    } */
+    /* .thirdPageMain p {
+        letter-spacing: 0.5px;
+    } */
+
 }
 @media only screen and (max-width:1038px){
     .mainNav{
