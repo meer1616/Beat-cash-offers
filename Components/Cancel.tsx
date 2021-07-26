@@ -11,7 +11,7 @@ export default function Cancel() {
                         <h1 className={styles.cancelHeading}>Win more. Lose less.</h1>
                         <p>
                             When you make a Good As Cash Offer<sup>TM</sup>, you standout
-                            (in a good way) in sea of competition, and give sellers a reason
+                            (in a good way) in the sea of competition, and give sellers a reason
                             to choose your offer over the rest.
                         </p>
                     </div>

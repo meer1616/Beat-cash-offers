@@ -15,7 +15,7 @@ export const faqData = [
         id: 3,
         open: false,
         que: 'What is the difference between a pre-qualification, a pre-approval, and a loan approval? ',
-        ans: 'The difference is all in the amount of work a lender does upfront. In today’s market, real estate transactions are moving faster than ever before. In order to get a leg up on the competition, it helps if you can be as fully prepared as possible before you make an offer. With a full loan approval in hand, there is no guessing or surprises about your loan proceeds. This removes risk for both you and the seller. '
+        ans: 'The difference is all in the amount of work a lender does upfront. In today’s market, real estate transactions are moving faster than ever before. In order to get a leg up on the competition, it helps if you can be as fully prepared as possible before you make an offer. With a full loan approval in hand, there is no guessing or surprises about your loan proceeds. This removes the risk for both you and the seller. '
     },
     {
         id: 4,

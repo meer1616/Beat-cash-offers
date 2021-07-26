@@ -35,7 +35,7 @@ export default function NewsLetter() {
     <Zoom>
       <div className={styles.elevenPageMain}>
         <div className={styles.elevenPage}>
-          <h1 className={styles.contactHeading}>Subscribe Newsletter for </h1>
+          <h1 className={styles.contactHeading}>Subscribe to our Newsletter for </h1>
           <h1
             style={{ marginBottom: "40px" }}
             className={styles.contactHeading}

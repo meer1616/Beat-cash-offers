@@ -47,7 +47,7 @@ export default function Footer() {
                     <p> &copy; 2021, All Rights Reserved By Farehomes, Powered by <a href="https://qwertyvate.com" target="_blank" style={{ textDecoration: "underline" }} rel="noreferrer"> Qwertyvate </a> </p>
                     <p> beatcashoffers.com is offered by Sonoma Pacific Reality, a licensed California real estate broker DRE #02137040  </p>
                     <p> All homes are subject to approval and must be listed with an MLS. All homes are subject to inspections and other limitations.</p>
-                    <li style={{ paddingBottom: "30px", listStyle: "none" }}>* All lender are subject to approval before a good As Cash Offer<sup style={{ fontSize: "10px" }}>TM</sup> can be made.</li>
+                    <li style={{ paddingBottom: "30px", listStyle: "none" }}>* All lenders are subject to approval before a good As Cash Offer<sup style={{ fontSize: "10px" }}>TM</sup> can be made.</li>
                 </div>
                 <div className={styles.socialIcons}>
                     <a target="_blank" href="">Terms & Conditions</a> <a href="" target="_blank">Privacy & Policy</a>

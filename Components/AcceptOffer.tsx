@@ -21,7 +21,7 @@ export default function AcceptOffer() {
                     </div>
                     <div className={styles.cardinfoDiv}>
                         <p className={styles.card2P} >We&apos;ll help you find the perfect home and write a competitive offer without
-                            a lengthy and unpredicatable financing contingency-giving you an edge over
+                            a lengthy and unpredictable financing contingency-giving you an edge over
                             the competition
                         </p>
                     </div>

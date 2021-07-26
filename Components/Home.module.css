@@ -124,9 +124,9 @@
     justify-content: center;
     align-items: center;
 }
-.forthPageMain{
-    margin-top: 100px;
-}
+/* .forthPageMain{
+    margin-top: 0px;
+} */
 .fstlstName{
     display: flex;
 }
@@ -606,6 +606,9 @@
     .forthPage{
         width: 100%;
     }
+    /* .thirdPageMain{
+        margin: 0px 0;
+    } */
     /* .forthPageMain{
         border: 1px solid black;
 
@@ -650,7 +653,7 @@
     font-size: 24px;
 }
 .thirdPageMain{
-    margin: 60px 0;
+    margin: 30px 0;
 }
 .thirdPageMain h1{
     font-size: 24px;
