@@ -515,22 +515,9 @@
     margin-left: 10px;
 }
 @media only screen and (max-width:1255px){
-    /* .cardinfoDiv{
-        margin-top: 35px;
-    } */
     .thirdPageMain p {
         letter-spacing: 0.2px;
     }
-
-}
-@media only screen and (max-width:1148px){
-    /* .cardinfoDiv{
-        margin-top: 35px;
-    } */
-    /* .thirdPageMain p {
-        letter-spacing: 0.5px;
-    } */
-
 }
 @media only screen and (max-width:1038px){
     .mainNav{
@@ -602,7 +589,7 @@
         padding: 0 19px;
     }
     .footer{
-        margin-top: 100px;
+        margin-top: 50px;
         background: #18316e ;
         color: white;
     }
@@ -619,6 +606,20 @@
     .forthPage{
         width: 100%;
     }
+    /* .forthPageMain{
+        border: 1px solid black;
+
+        margin: 0;
+    }
+    .tenPageMain{
+        border: 1px solid black;
+        margin-top: 40px;
+    }
+    .ninePageMain{
+        border: 1px solid black;
+
+        margin-top: 40px;
+    } */
 }
 @media only screen and (max-width:533px){
 .footerLinks ul{
@@ -670,13 +671,13 @@
     font-size: 25px;
 }
 .ninePageMain{
-    margin: 120px 0;
+    margin: 30px 0;
 }
 .eightPageMain{
     margin: 80px 0;
 }
 .tenPageMain{
-    margin: 80px 0;
+    margin: 30px 0;
 }
 .inputOfForm{
     width: 90%;
@@ -719,7 +720,7 @@
     padding: 0 20px;
 }
 }
-@media only screen and (max-width:369px){
+@media only screen and (max-width:390px){
     .faqHeading{
         font-size: 20px;
     }
