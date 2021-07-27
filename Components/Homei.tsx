@@ -17,7 +17,7 @@ export default function Homei() {
           </p>
           <div style={{ display: "flex", alignItems: "center" }}>
 
-            <Image height={35} width={35} src="/call.svg" alt="" /> <span className={styles.callNowText} > Call 707-728-5737 </span>
+            <Image height={35} width={35} src="/call.svg" alt="" /> <a href="tel:+1-707-728-5737" className={styles.callNowText}> Call 707-728-5737 </a>
           </div>
           <a href="#applynowform"> <button className={styles.applyBtnHome}>   Apply now </button></a>
           <span className={styles.greenTxt}> <FaArrowRight style={{ fontWeight: "lighter", marginTop: "20px" }}></FaArrowRight> Strengthen your offer today</span>
