@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
 .homeContainer,.secPage,.cardImg,.fifthPageContHeading,.sevenPageCont1{
     display: flex;
     justify-content: center;
@@ -29,6 +31,10 @@
     font-size: 19px;
     letter-spacing: 0.2px;
     padding-right: 70px;
+}
+.callNowText{
+    margin-left: 20px;
+    font-weight: 500;
 }
 .applyBtnHome{
     padding: 7px 25px;

@@ -3,6 +3,7 @@ import Image from "next/image";
 import { FaArrowRight } from 'react-icons/fa'
 import Fade from 'react-reveal';
 
+
 export default function Homei() {
   return (
     <div id="home" className={styles.mainHome}>
@@ -14,6 +15,10 @@ export default function Homei() {
           <p className={styles.wlcmExtratxt}>
             We help buyers put their best foot forward by enabling them to submit stronger offers with less risk so they can buy with confidence.
           </p>
+          <div style={{ display: "flex", alignItems: "center" }}>
+
+            <Image height={35} width={35} src="/call.svg" alt="" /> <span className={styles.callNowText} > Call 707-728-5737 </span>
+          </div>
           <a href="#applynowform"> <button className={styles.applyBtnHome}>   Apply now </button></a>
           <span className={styles.greenTxt}> <FaArrowRight style={{ fontWeight: "lighter", marginTop: "20px" }}></FaArrowRight> Strengthen your offer today</span>
 
@@ -26,6 +31,6 @@ export default function Homei() {
           </div>
         </Fade>
       </div>
-    </div>
+    </div >
   );
 }
