@@ -451,6 +451,7 @@
     color: white;
     letter-spacing: 0.5px;
     font-size: 16px;
+    outline: none;
 }
 .subscribeBtn:hover{
     cursor: pointer;
