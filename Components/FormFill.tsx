@@ -7,6 +7,7 @@ import { createTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
 import Zoom from "react-reveal";
 import { default as NumberFormat } from "react-number-format";
+import Fade from 'react-reveal'
 
 const muiTheme = createTheme({
   overrides: {
@@ -43,9 +44,8 @@ export default function FormFill() {
   const [timeToContact, setTimeToContact] = useState("");
   const [lender, setLender] = useState("");
   const [agent, setAgent] = useState("");
-  const [reset, setReset] = useState(false)
-  const [afterSubmit, setAfterSubmit] = useState(false);
-
+  const [submitSuccess, setSubmitSuccess] = useState(false)
+  const [formReqField, setFormReqField] = useState(false)
   let formFillAPI: any;
   formFillAPI = process.env.NEXT_PUBLIC_FormFill;
 
@@ -67,52 +67,61 @@ export default function FormFill() {
 
   const handleChange = (e: any) => {
     setData({ ...data, [e.target.name]: e.target.value });
-
   };
 
   const handleSubmit = async (e: any) => {
 
     e.preventDefault();
-    setAfterSubmit(true)
 
-    setReset(true)
-    try {
-      const response = await fetch(
-        formFillAPI,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify([
-            [
-              firstname,
-              lastname,
-              phonenumber,
-              email,
-              timeToContact,
-              lender,
-              agent,
-              range,
-              zipCode,
-              new Date().toLocaleString(),
-            ],
-          ]),
-        }
-      );
-      await response.json();
-      setData({
-        ...data,
-        firstname: "",
-        lastname: "",
-        phonenumber: "",
-        email: "",
-        zipCode: ""
-      });
-      setTimeToContact("")
-      setAgent("")
-      setLender("")
-    } catch (err) {
-      console.log(err);
+    if (!firstname || !lastname || !phonenumber || !email) {
+      alert("Please enter the required field")
+      setFormReqField(true)
+    } else {
+
+
+      try {
+        const response = await fetch(
+          formFillAPI,
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify([
+              [
+                firstname,
+                lastname,
+                phonenumber,
+                email,
+                timeToContact,
+                lender,
+                agent,
+                range,
+                zipCode,
+                new Date().toLocaleString(),
+              ],
+            ]),
+          }
+        );
+        await response.json();
+        setData({
+          ...data,
+          firstname: "",
+          lastname: "",
+          phonenumber: "",
+          email: "",
+          zipCode: ""
+        });
+        setTimeToContact("")
+        setAgent("")
+        setLender("")
+        setSubmitSuccess(true)
+        setTimeout(() => {
+          setSubmitSuccess(false)
+        }, 4000);
+      } catch (err) {
+        console.log(err);
+      }
     }
+
   };
 
   return (
@@ -136,207 +145,216 @@ export default function FormFill() {
             />
           </div>
         </div>
-        <div id="applynowform" className={styles.formDetail}>
-          <div className={styles.form}>
-            <div className={styles.formHeading}>Apply Now</div>
-            <div className={styles.fillformDetail}>
-              <div className={styles.forPad}>
-                <div className={styles.fstlstName}>
-                  <div className={cn(styles.fname, styles.gapbtwnElem)}>
-                    <label className={styles.labelOfForm} htmlFor="">
-                      First Name
-                    </label>
-                    <input
-                      className={styles.inputOfForm}
-                      type="text"
-                      name="firstname"
-                      value={firstname}
-                      onChange={handleChange}
-                    />
-                  </div>
-                  <div className={cn(styles.fname, styles.gapbtwnElem)}>
-                    <label className={styles.labelOfForm} htmlFor="">
-                      Last Name
-                    </label>
-                    <input
-                      className={styles.inputOfForm}
-                      type="text"
-                      name="lastname"
-                      value={lastname}
-                      onChange={handleChange}
-                    />
-                  </div>
-                </div>
-                <div className={styles.fstlstName}>
-                  <div className={cn(styles.fname, styles.gapbtwnElem)}>
-                    <label className={styles.labelOfForm} htmlFor="">
-                      Phone Number
-                    </label>
-                    <input
-                      className={styles.inputOfForm}
-                      type="phone number"
-                      name="phonenumber"
-                      value={phonenumber}
-                      onChange={handleChange}
-                    />
-                  </div>
-                  <div className={cn(styles.fname, styles.gapbtwnElem)}>
-                    <label className={styles.labelOfForm} htmlFor="">
-                      Email Address
-                    </label>
-                    <input
-                      className={styles.inputOfForm}
-                      type="email"
-                      name="email"
-                      value={email}
-                      onChange={handleChange}
-                    />
-                  </div>
-                </div>
-                <div className={styles.queDiv}>
-                  <label
-                    className={cn(styles.labelOfForm, styles.q2label)}
-                    htmlFor=""
-                  >
-                    Best Time to contact you
-                  </label>
-                  <div className={styles.formFillRadioBtnDiv}>
-                    <div>
+        {submitSuccess ? <div>
+          <Fade>
+            <div className={styles.ninePageImg}>
+              <Image height={800} width={800} src="/applyNowSuccess.svg" alt="" />
+            </div>
+          </Fade>
+        </div> :
+          <div id="applynowform" className={styles.formDetail}>
+            <div className={styles.form}>
+              <div className={styles.formHeading}>Apply Now</div>
+              <div className={styles.fillformDetail}>
+                <div className={styles.forPad}>
+                  <div className={styles.fstlstName}>
+                    <div className={cn(styles.fname, styles.gapbtwnElem)}>
+                      <label className={styles.labelOfForm} htmlFor="">
+                        First Name <span style={{ color: "red" }}>*</span>
+                      </label>
+                      {/* {formReqField && <p style={{ color: "red", fontSize: "10px" }}>Please enter required field</p>} */}
+
                       <input
-                        type="radio"
-                        id="q1yes"
-                        name="q2"
-                        value="Morning"
-
-                        // onChange={(e)=>{setTimeToContact(e.target.value)}}
-                        onChange={(e) => {
-                          setTimeToContact(e.target.value);
-                        }}
-                        checked={timeToContact === "Morning"}
-
+                        className={styles.inputOfForm}
+                        type="text"
+                        name="firstname"
+                        value={firstname}
+                        onChange={handleChange}
                       />
-                      <label className={styles.q2radioBtn} htmlFor=""> Morning </label>
                     </div>
-                    <div>
+                    <div className={cn(styles.fname, styles.gapbtwnElem)}>
+                      <label className={styles.labelOfForm} htmlFor="">
+                        Last Name <span style={{ color: "red" }}>*</span>
+                      </label>
                       <input
-                        type="radio"
-                        id="q1no"
-                        name="q2"
-                        value="Afternoon"
-                        onChange={(e) => { setTimeToContact(e.target.value); console.log("checked afternoon", e.target.checked) }}
-                        checked={timeToContact === "Afternoon"}
+                        className={styles.inputOfForm}
+                        type="text"
+                        name="lastname"
+                        value={lastname}
+                        onChange={handleChange}
                       />
-                      <label className={styles.q2radioBtn} htmlFor=""> Afternoon </label>
-                    </div>
-                    <div>
-                      <input
-                        type="radio"
-                        id="q1no"
-                        name="q2"
-                        value="Evening"
-                        onChange={(e) => { setTimeToContact(e.target.value) }}
-                        checked={timeToContact === "Evening"}
-
-                      // onChange={handleChange}
-
-                      />
-                      <label htmlFor=""> Evening</label>
                     </div>
                   </div>
-                </div>
-
-                <div className={styles.que}>
+                  <div className={styles.fstlstName}>
+                    <div className={cn(styles.fname, styles.gapbtwnElem)}>
+                      <label className={styles.labelOfForm} htmlFor="">
+                        Phone Number <span style={{ color: "red" }}>*</span>
+                      </label>
+                      <input
+                        className={styles.inputOfForm}
+                        type="phone number"
+                        name="phonenumber"
+                        value={phonenumber}
+                        onChange={handleChange}
+                      />
+                    </div>
+                    <div className={cn(styles.fname, styles.gapbtwnElem)}>
+                      <label className={styles.labelOfForm} htmlFor="">
+                        Email Address <span style={{ color: "red" }}>*</span>
+                      </label>
+                      <input
+                        className={styles.inputOfForm}
+                        type="email"
+                        name="email"
+                        value={email}
+                        onChange={handleChange}
+                      />
+                    </div>
+                  </div>
                   <div className={styles.queDiv}>
                     <label
-                      className={cn(styles.labelOfForm, styles.q1label)}
+                      className={cn(styles.labelOfForm, styles.q2label)}
                       htmlFor=""
                     >
-                      Are you currently working with a lender?
-                    </label>
+                      Best Time to contact you
+                  </label>
                     <div className={styles.formFillRadioBtnDiv}>
                       <div>
                         <input
                           type="radio"
                           id="q1yes"
-                          name="q1"
-                          value="Yes"
-                          onChange={(e) => { setLender(e.target.value) }}
-                          checked={lender === "Yes"}
-                        // }
-                        // onChange={handleChange}
+                          name="q2"
+                          value="Morning"
+
+                          // onChange={(e)=>{setTimeToContact(e.target.value)}}
+                          onChange={(e) => {
+                            setTimeToContact(e.target.value);
+                          }}
+                          checked={timeToContact === "Morning"}
+
                         />
-                        <label className={styles.q1radioBtn} htmlFor="">
-                          Yes
-                        </label>
+                        <label className={styles.q2radioBtn} htmlFor=""> Morning </label>
                       </div>
                       <div>
                         <input
                           type="radio"
                           id="q1no"
-                          name="q1"
-                          value="No"
-                          onChange={(e) => { setLender(e.target.value) }}
-                          checked={lender === "No"}
+                          name="q2"
+                          value="Afternoon"
+                          onChange={(e) => { setTimeToContact(e.target.value); console.log("checked afternoon", e.target.checked) }}
+                          checked={timeToContact === "Afternoon"}
+                        />
+                        <label className={styles.q2radioBtn} htmlFor=""> Afternoon </label>
+                      </div>
+                      <div>
+                        <input
+                          type="radio"
+                          id="q1no"
+                          name="q2"
+                          value="Evening"
+                          onChange={(e) => { setTimeToContact(e.target.value) }}
+                          checked={timeToContact === "Evening"}
 
                         // onChange={handleChange}
+
                         />
-                        <label htmlFor=""> No</label>
+                        <label htmlFor=""> Evening</label>
                       </div>
                     </div>
+                  </div>
 
-                    <div className={styles.que4Div}>
+                  <div className={styles.que}>
+                    <div className={styles.queDiv}>
                       <label
                         className={cn(styles.labelOfForm, styles.q1label)}
                         htmlFor=""
                       >
-                        Are you already working with an agent?
-                      </label>
+                        Are you currently working with a lender?
+                    </label>
                       <div className={styles.formFillRadioBtnDiv}>
                         <div>
                           <input
                             type="radio"
-                            id="q4yes"
-                            name="q4"
+                            id="q1yes"
+                            name="q1"
                             value="Yes"
-                            onChange={(e) => { setAgent(e.target.value) }}
-                            // onChange={handleChange}
-                            checked={agent === "Yes"}
+                            onChange={(e) => { setLender(e.target.value) }}
+                            checked={lender === "Yes"}
+                          // }
+                          // onChange={handleChange}
                           />
                           <label className={styles.q1radioBtn} htmlFor="">
-                            {" "}
                             Yes
-                          </label>
+                        </label>
                         </div>
                         <div>
                           <input
                             type="radio"
-                            id="q4no"
-                            name="q4"
+                            id="q1no"
+                            name="q1"
                             value="No"
-                            onChange={(e) => { setAgent(e.target.value) }}
-                            checked={agent === "No"}
+                            onChange={(e) => { setLender(e.target.value) }}
+                            checked={lender === "No"}
 
                           // onChange={handleChange}
-
                           />
-
                           <label htmlFor=""> No</label>
                         </div>
                       </div>
-                    </div>
-                    <div className={styles.expectToSpend}>
-                      <label htmlFor="">How much do you expect to spend?</label>
-                      <p style={{ margin: "15px 0", color: "#091638" }}>
-                        Value :{" "}
-                        <NumberFormat
-                          value={range}
-                          displayType={"text"}
-                          thousandSeparator={true}
-                          prefix={"$"}
-                        />
-                      </p>
-                      <ThemeProvider theme={muiTheme}>
-                        {/* <Slider
+
+                      <div className={styles.que4Div}>
+                        <label
+                          className={cn(styles.labelOfForm, styles.q1label)}
+                          htmlFor=""
+                        >
+                          Are you already working with an agent?
+                      </label>
+                        <div className={styles.formFillRadioBtnDiv}>
+                          <div>
+                            <input
+                              type="radio"
+                              id="q4yes"
+                              name="q4"
+                              value="Yes"
+                              onChange={(e) => { setAgent(e.target.value) }}
+                              // onChange={handleChange}
+                              checked={agent === "Yes"}
+                            />
+                            <label className={styles.q1radioBtn} htmlFor="">
+                              {" "}
+                            Yes
+                          </label>
+                          </div>
+                          <div>
+                            <input
+                              type="radio"
+                              id="q4no"
+                              name="q4"
+                              value="No"
+                              onChange={(e) => { setAgent(e.target.value) }}
+                              checked={agent === "No"}
+
+                            // onChange={handleChange}
+
+                            />
+
+                            <label htmlFor=""> No</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div className={styles.expectToSpend}>
+                        <label htmlFor="">How much do you expect to spend?</label>
+                        <p style={{ margin: "15px 0", color: "#091638" }}>
+                          Value :{" "}
+                          <NumberFormat
+                            value={range}
+                            displayType={"text"}
+                            thousandSeparator={true}
+                            prefix={"$"}
+                          />
+                        </p>
+                        <ThemeProvider theme={muiTheme}>
+                          {/* <Slider
                                                     defaultValue={250000}
                                                     aria-labelledby="discrete-slider-small-steps"
                                                     onChange={(e, value) => {
@@ -347,76 +365,77 @@ export default function FormFill() {
                                                     max={1000000}
                                                     style={{ color: "black" }}
                                                 /> */}
-                        {
-                          // reset ? (
-                          //   <Slider
-                          //     // defaultValue={0.00000005}
-                          //     defaultValue={250000}
+                          {
+                            // reset ? (
+                            //   <Slider
+                            //     // defaultValue={0.00000005}
+                            //     defaultValue={250000}
 
-                          //     // getAriaValueText={valuetext}
-                          //     aria-labelledby="discrete-slider-small-steps"
-                          //     step={50}
-                          //     // marks
-                          //     min={250000}
-                          //     max={1000000}
-                          //   // valueLabelDisplay="auto"
-                          //   />
-                          // )  (
-                          <Slider
-                            // defaultValue={0.00000005}
-                            defaultValue={250000}
-                            onChange={(e, value) => {
-                              setRange(value.toString());
-                            }}
-                            // getAriaValueText={valuetext}
-                            aria-labelledby="discrete-slider-small-steps"
-                            step={50000}
-                            // marks
-                            min={250000}
-                            max={1000000}
-                          // valueLabelDisplay="auto"
-                          />
-                          // )
-                        }
+                            //     // getAriaValueText={valuetext}
+                            //     aria-labelledby="discrete-slider-small-steps"
+                            //     step={50}
+                            //     // marks
+                            //     min={250000}
+                            //     max={1000000}
+                            //   // valueLabelDisplay="auto"
+                            //   />
+                            // )  (
+                            <Slider
+                              // defaultValue={0.00000005}
+                              defaultValue={250000}
+                              onChange={(e, value) => {
+                                setRange(value.toString());
+                              }}
+                              // getAriaValueText={valuetext}
+                              aria-labelledby="discrete-slider-small-steps"
+                              step={50000}
+                              // marks
+                              min={250000}
+                              max={1000000}
+                            // valueLabelDisplay="auto"
+                            />
+                            // )
+                          }
 
-                      </ThemeProvider>
-                      <div
-                        style={{
-                          display: "flex",
-                          justifyContent: "space-between",
-                        }}
-                      >
-                        <span>$250,000</span> <span>$1,000,000+</span>
+                        </ThemeProvider>
+                        <div
+                          style={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                          }}
+                        >
+                          <span>$250,000</span> <span>$1,000,000+</span>
+                        </div>
                       </div>
-                    </div>
-                    <br />
-                    <div className={styles.ZipDiv}>
-                      <label className={styles.labelOfForm} htmlFor="">
-                        What zipcode are you looking in?
+                      <br />
+                      <div className={styles.ZipDiv}>
+                        <label className={styles.labelOfForm} htmlFor="">
+                          What zipcode are you looking in?
                       </label>
-                      <input
-                        className={cn(styles.inputOfForm, styles.concern)}
-                        type="zipCode"
-                        name="zipCode"
-                        value={zipCode}
-                        onChange={handleChange}
-                      />
+                        <input
+                          className={cn(styles.inputOfForm, styles.concern)}
+                          type="zipCode"
+                          name="zipCode"
+                          value={zipCode}
+                          onChange={handleChange}
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className={styles.submit}>
-              <button
-                type="submit"
-                className={styles.submitBtn}
-                onClick={handleSubmit}
-              >
-                Submit
+              <div className={styles.submit}>
+                <button
+                  type="submit"
+                  className={styles.submitBtn}
+                  onClick={handleSubmit}
+                >
+                  Submit
               </button>
+              </div>
             </div>
           </div>
-        </div>
+        }
       </div>
     </div>
   );

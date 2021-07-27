@@ -129,6 +129,7 @@
 } */
 .fstlstName{
     display: flex;
+    margin-left: 12px;
 }
 .fname{
     width: 50%;
@@ -290,17 +291,6 @@
 .ninePageImg{
     margin-left: 50px;
 }
-/* .eightPageContCmn:hover{
-    box-shadow: 0 2px 5px rgb(47, 47, 47);
-    transform: scale(1.15);
-    cursor: pointer;
-    transition: all 0.7s ease;
-    background: rgba(0,0,0,0.5) url("../public/homeBuying.jpg") ;
-    color: white;
-    background-size: cover;
-    background-blend-mode: darken;
-    z-index: 10;
-} */
 .eightPage{
     width: 80%;
     margin: auto;
@@ -346,18 +336,6 @@
     margin-top: -5px;
     overflow: hidden;
 }
-.faqContDescBlock{
-    display: block;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    padding: 10px 12px;
-    margin: 5px 0px;
-    border: 1px solid lightgray;
-    margin-top: -5px;
-    color:rgb(80, 80, 80);
-    overflow: hidden;
-    transition: all 0.5s ease;
-}
 .faqContDescBlock p{
     padding: 10px 25px;
 }
@@ -368,6 +346,21 @@
 }
 .faqContDescNone{
     display: none;
+    transition: all 0.5s ease;
+}
+.faqContDescBlock{
+    display: block;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 10px 12px;
+    margin: 5px 0px;
+    border: 1px solid lightgray;
+    margin-top: -5px;
+    color:rgb(80, 80, 80);
+    overflow: hidden;
+    /* transform: translateY(-100%); */
+    /* opacity: 0; */
+    z-index: -10;
     transition: all 0.5s ease;
 }
 .contactInfoPageNine{
@@ -540,7 +533,7 @@
         width: 100%;
     }
     .formDetail{
-        margin-top: 50px;
+        margin-top: 10px;
         width: 90%;
     }
     .firstCard{
@@ -690,7 +683,8 @@
 }
 .ContactUsSubmitBtn{
     padding: 10px 0px;
-    margin: 0;
+    /* margin: 0; */
+    margin: 0 -15px;
     width: 100%;
     text-align: center;
 }

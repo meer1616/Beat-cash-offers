@@ -48,9 +48,9 @@ export default function Faq() {
                         {list.map((data) => {
                             return (<div key={data.id}>
                                 <div className={data.open ? cn(styles.faqFlexforIcon, styles.faqContColor) : cn(styles.faqFlexforIcon, styles.faqCont)}>
-                                    <p style={{ padding: "10px " }}>{data.que} </p><span className={styles.plusMinus} onClick={() => handleClick(data.id)}> {data.open ? '-' : "+"} </span>
+                                    <p onClick={() => handleClick(data.id)} style={{ padding: "10px ", cursor: "pointer" }}>{data.que} </p><span onClick={() => handleClick(data.id)} className={styles.plusMinus} > {data.open ? '-' : "+"} </span>
                                 </div>
-                                <p className={data.open ? styles.faqContDescBlock : styles.faqContDescNone} >{data.ans}</p>
+                                <Fade left> <div className={styles.faqAnswerDiv}><p style={{ zIndex: -1 }} className={data.open ? styles.faqContDescBlock : styles.faqContDescNone} >{data.ans}</p> </div></Fade>
                             </div>)
                         })}
                     </div>

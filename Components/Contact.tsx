@@ -8,6 +8,8 @@ export default function Contact() {
 
   let contactUsAPI: any;
   contactUsAPI = process.env.NEXT_PUBLIC_ContactUs;
+  const [thankyouModal, setThankyouModal] = useState(false)
+  const [reqField, setReqField] = useState(false)
 
   const [data, setData] = useState({
     firstname: "",
@@ -24,34 +26,48 @@ export default function Contact() {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    try {
-      const response = await fetch(
-        contactUsAPI,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify([
-            [
-              firstname,
-              lastname,
-              phonenumber,
-              email,
-              new Date().toLocaleString(),
-            ],
-          ]),
-        }
-      );
-      await response.json();
-      setData({
-        ...data,
-        firstname: "",
-        lastname: "",
-        phonenumber: "",
-        email: "",
-      });
-    } catch (err) {
-      console.log(err);
+    if (!firstname || !lastname || !phonenumber || !email) {
+      setReqField(true)
+      setTimeout(() => {
+        setReqField(false)
+      }, 5000);
     }
+    else {
+
+      try {
+        const response = await fetch(
+          contactUsAPI,
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify([
+              [
+                firstname,
+                lastname,
+                phonenumber,
+                email,
+                new Date().toLocaleString(),
+              ],
+            ]),
+          }
+        );
+        await response.json();
+        setData({
+          ...data,
+          firstname: "",
+          lastname: "",
+          phonenumber: "",
+          email: "",
+        });
+        setThankyouModal(true)
+        setTimeout(() => {
+          setThankyouModal(false)
+        }, 4000);
+      } catch (err) {
+        console.log(err);
+      }
+    }
+
   };
   return (
     <div id="contactus" className={styles.tenPageMain}>
@@ -68,72 +84,83 @@ export default function Contact() {
           </div>
         </Fade>
         <Fade right>
-          <div className={styles.contactForm}>
-            <div className={cn(styles.contactInfoCont, styles.ContactUsform)}>
-              <h1 className={styles.contactHeading}>Get in Touch with Us</h1>
-              <form method="POST" onSubmit={handleSubmit}>
-                <div>
-                  <label className={styles.labelOfForm} htmlFor="">
-                    First Name
-                  </label>
-                  <input
-                    className={cn(
-                      styles.inputOfForm,
-                      styles.inputOfContactUsForm
-                    )}
-                    type="text"
-                    name="firstname"
-                    value={firstname}
-                    onChange={handleChange}
-                  />
+          {
+            thankyouModal ? <div>
+              <Fade>
+                <div className={styles.ninePageImg}>
+                  <Image height="500px"
+                    width="700px" src="/contactSuccess.svg" alt="" />
                 </div>
-                <div>
-                  <label className={styles.labelOfForm} htmlFor="">
-                    Last Name
-                  </label>
-                  <input
-                    className={cn(styles.inputOfForm)}
-                    type="text"
-                    name="lastname"
-                    value={lastname}
-                    onChange={handleChange}
-                  />
-                </div>
-                <div>
-                  <label className={styles.labelOfForm} htmlFor="">
-                    Phone Number
-                  </label>
-                  <input
-                    className={cn(
-                      styles.inputOfForm,
-                      styles.inputOfContactUsForm
-                    )}
-                    type="phone number"
-                    name="phonenumber"
-                    value={phonenumber}
-                    onChange={handleChange}
-                  />
-                </div>
-                <div>
-                  <label className={styles.labelOfForm} htmlFor="">
-                    Email Address
-                  </label>
-                  <input
-                    className={styles.inputOfForm}
-                    type="email"
-                    name="email"
-                    value={email}
-                    onChange={handleChange}
-                  />
-                </div>
-                <div className={styles.contactUsSubmitDiv}>
-                  <button type="submit" className={styles.ContactUsSubmitBtn}>
-                    Submit{" "}
-                  </button>
-                </div>
-              </form>
+              </Fade>
+            </div> : <div className={styles.contactForm}>
+              <div className={cn(styles.contactInfoCont, styles.ContactUsform)}>
+                <h1 className={styles.contactHeading}>Get in Touch with Us</h1>
+                <form method="POST" onSubmit={handleSubmit}>
+                  <div>
+                    <label className={styles.labelOfForm} htmlFor="">
+                      First Name <span style={{ color: "red" }}> * </span>
+                    </label>
+                    <input
+                      className={cn(
+                        styles.inputOfForm,
+                        styles.inputOfContactUsForm
+                      )}
+                      type="text"
+                      name="firstname"
+                      value={firstname}
+                      onChange={handleChange}
+                    />
+                  </div>
+                  <div>
+                    <label className={styles.labelOfForm} htmlFor="">
+                      Last Name <span style={{ color: "red" }}> * </span>
+                    </label>
+                    <input
+                      className={cn(styles.inputOfForm)}
+                      type="text"
+                      name="lastname"
+                      value={lastname}
+                      onChange={handleChange}
+                    />
+                  </div>
+                  <div>
+                    <label className={styles.labelOfForm} htmlFor="">
+                      Phone Number <span style={{ color: "red" }}> * </span>
+                    </label>
+                    <input
+                      className={cn(
+                        styles.inputOfForm,
+                        styles.inputOfContactUsForm
+                      )}
+                      type="phone number"
+                      name="phonenumber"
+                      value={phonenumber}
+                      onChange={handleChange}
+                    />
+                  </div>
+                  <div>
+                    <label className={styles.labelOfForm} htmlFor="">
+                      Email Address <span style={{ color: "red" }}> * </span>
+                    </label>
+                    <input
+                      className={styles.inputOfForm}
+                      type="email"
+                      name="email"
+                      value={email}
+                      onChange={handleChange}
+                    />
+                  </div>
+                  {reqField && <p style={{ color: "red", fontSize: "18px" }}>Please Enter the required field</p>}
+                  <div className={styles.contactUsSubmitDiv}>
+                    <button type="submit" className={styles.ContactUsSubmitBtn}>
+                      Submit{" "}
+                    </button>
+                  </div>
+                </form>
+              </div>
             </div>
-          </div>
+          }
+
         </Fade>
       </div>
     </div>

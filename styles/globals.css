@@ -122,5 +122,6 @@ box-shadow: 0px 0px 8px black;
   }
   .hamburgerRot{
     transition: all 0.7s ease;
+    /* background-color: rgb(255, 115, 115); */
   }
 }

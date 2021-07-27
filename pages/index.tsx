@@ -26,12 +26,12 @@ export default function Home() {
 
     <div>
       <Head>
-        <title>Farehomes</title>
+        <title>beatcashoffers</title>
         <link rel="shortcut icon" href="/favicon.png" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta property="og:title" content="Write A Competitive Letter With Farehomes | Buy With Confidence" />
         <meta property="og:description" content="Farehomes Will Assist You To Draft An Offer Letter That Can Help You To Buy Home Free From Contingencies | Get Best Home Financing Offer Letter Near You." />
-        <meta property="og:image" content={`/logo.png`} />
+        <meta property="og:image" content={`/logon.jpeg`} />
         <meta property="og:image:width" content="50" />
         <meta property="og:image:height" content="50" />
         <meta property="og:image:alt" content="farehomes" />

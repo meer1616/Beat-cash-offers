@@ -38,7 +38,7 @@ export default function Footer() {
                 <div className={styles.footerContact}>
                     <p style={{ fontSize: "25px" }}>Contact Us</p>
                     <p style={{ margin: "10px 0" }}><a href="#">hello@beatcashoffers.com</a></p>
-                    <p>(707) 328-6039</p>
+                    <p>707-728-5737</p>
                 </div>
             </div>
             <hr style={{ margin: "20px" }} />
