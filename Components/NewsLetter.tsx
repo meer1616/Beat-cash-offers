@@ -1,6 +1,7 @@
 import styles from "./Home.module.css";
 import Zoom from "react-reveal";
 import { useState } from "react";
+import Fade from 'react-reveal'
 
 export default function NewsLetter() {
 
@@ -8,6 +9,8 @@ export default function NewsLetter() {
   newsLetterAPI = process.env.NEXT_PUBLIC_NewsLetter;
 
   const [data, setData] = useState("");
+  const [emailReq, setEmailReq] = useState(false)
+
 
   const handleChange = (e: any) => {
     setData(e.target.value);
@@ -15,21 +18,31 @@ export default function NewsLetter() {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    try {
-      const response = await fetch(
-        newsLetterAPI,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify([[data, new Date().toLocaleString()]]),
-        }
-      );
-      await response.json();
-      setData("");
-    } catch (err) {
-      console.log(err);
+    if (!data) {
+      // alert("please enter the email")
+      setEmailReq(true)
+      setTimeout(() => {
+        setEmailReq(false)
+      }, 4000);
     }
-  };
+    else {
+
+      try {
+        const response = await fetch(
+          newsLetterAPI,
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify([[data, new Date().toLocaleString()]]),
+          }
+        );
+        await response.json();
+        setData("");
+      } catch (err) {
+        console.log(err);
+      }
+    };
+  }
 
   return (
     <Zoom>
@@ -57,6 +70,7 @@ export default function NewsLetter() {
               <button className={styles.subscribeBtn} onClick={handleSubmit}> Subscribe Now</button>
             </div>
           </div>
+          {emailReq && <Fade> <p style={{ color: "red", marginTop: "10px" }}>Please enter valid email address</p></Fade>}
         </div>
       </div>
     </Zoom>

@@ -150,7 +150,7 @@ export default function Contact() {
                       onChange={handleChange}
                     />
                   </div>
-                  {reqField && <p style={{ color: "red", fontSize: "18px" }}>Please Enter the required field</p>}
+                  {reqField && <Fade> <p style={{ color: "red", fontSize: "16px" }}>Please Enter the required field</p></Fade>}
                   <div className={styles.contactUsSubmitDiv}>
                     <button type="submit" className={styles.ContactUsSubmitBtn}>
                       Submit{" "}
