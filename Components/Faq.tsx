@@ -50,7 +50,7 @@ export default function Faq() {
                                 <div className={data.open ? cn(styles.faqFlexforIcon, styles.faqContColor) : cn(styles.faqFlexforIcon, styles.faqCont)}>
                                     <p onClick={() => handleClick(data.id)} style={{ padding: "10px ", cursor: "pointer" }}>{data.que} </p><span onClick={() => handleClick(data.id)} className={styles.plusMinus} > {data.open ? '-' : "+"} </span>
                                 </div>
-                                <Fade left> <div className={styles.faqAnswerDiv}><p style={{ zIndex: -1 }} className={data.open ? styles.faqContDescBlock : styles.faqContDescNone} >{data.ans}</p> </div></Fade>
+                                <Fade> <div className={styles.faqAnswerDiv}><p style={{ zIndex: -1 }} className={data.open ? styles.faqContDescBlock : styles.faqContDescNone} >{data.ans}</p> </div></Fade>
                             </div>)
                         })}
                     </div>
