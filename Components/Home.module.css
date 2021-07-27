@@ -600,6 +600,10 @@
     .forthPage{
         width: 100%;
     }
+    .fstlstName{
+        display: flex;
+        margin-left: 0px;
+    }
     /* .thirdPageMain{
         margin: 0px 0;
     } */
