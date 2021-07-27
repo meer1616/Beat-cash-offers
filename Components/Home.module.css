@@ -307,6 +307,7 @@
 }
 .plusMinus{
     cursor: pointer;
+    padding: 10px;
 }
 .eightPageContCmn p,.eightPageContCmn h3,.eightPageContCmn h4{
     margin: 15px 0;
