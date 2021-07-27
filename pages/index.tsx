@@ -32,8 +32,8 @@ export default function Home() {
         <meta property="og:title" content="Write A Competitive Letter With Farehomes | Buy With Confidence" />
         <meta property="og:description" content="Farehomes Will Assist You To Draft An Offer Letter That Can Help You To Buy Home Free From Contingencies | Get Best Home Financing Offer Letter Near You." />
         <meta property="og:image" content={`/logo.png`} />
-        <meta property="og:image:width" content="100" />
-        <meta property="og:image:height" content="100" />
+        <meta property="og:image:width" content="50" />
+        <meta property="og:image:height" content="50" />
         <meta property="og:image:alt" content="farehomes" />
         {/* <meta property="og:image:height" content="200" />
         <meta property="og:image:width" content="200" /> */}
