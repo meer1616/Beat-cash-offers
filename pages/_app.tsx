@@ -6,7 +6,7 @@ import { useEffect } from "react"
 function MyApp({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
-    ReactGa.initialize("UA-203031046-1")
+    ReactGa.initialize("UA-203733854-1")
     ReactGa.pageview(window.location.pathname + window.location.search)
   }, [])
 
